@@ -62,6 +62,22 @@ namespace ML04_WPF
                 contractDataTbl.ItemsSource = dt.DefaultView;
             }
         }
+
+        private void completedBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string myConnectionString;
+            myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
+
+            DataTable dt2 = new DataTable();
+            using (MySqlConnection conn = new MySqlConnection(myConnectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM orders";
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                    da.Fill(dt2);
+            }
+            contractDataTbl.ItemsSource = dt2.DefaultView;
+        }
         private void cmpLogInBtn_Click(object sender, RoutedEventArgs e)
         {
             cmpLogInInfo.cmpID = null;
