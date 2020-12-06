@@ -23,6 +23,8 @@ namespace ML04_WPF
     /// </summary>
     public partial class PlannerPage : Window
     {
+        private static string sPath = System.AppDomain.CurrentDomain.BaseDirectory;
+
         public static class ContractInfo
         {
             public static string OrderID { get; set; }
@@ -47,7 +49,37 @@ namespace ML04_WPF
 
         private void Invoice_Click(object sender, RoutedEventArgs e)
         {
+            completedBtn_Click(sender, e);
 
+            StreamWriter swExtLogFile = new StreamWriter(sPath + "/AllTimeInvoice.txt", true);
+            DataTable dt2 = new DataTable();
+
+            string myConnectionString;
+            myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
+
+            dt2 = new DataTable();
+            using (MySqlConnection conn = new MySqlConnection(myConnectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM orders where completed = false";
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                    da.Fill(dt2);
+            }
+
+            swExtLogFile.Write(Environment.NewLine);
+            int i;
+            foreach (DataRow row in dt2.Rows)
+            {
+                object[] array = row.ItemArray;
+                for (i = 0; i < array.Length - 1; i++)
+                {
+                    swExtLogFile.Write(array[i].ToString() + " | ");
+                }
+                swExtLogFile.WriteLine(array[i].ToString());
+            }
+            swExtLogFile.Write(DateTime.Now.ToString());
+            swExtLogFile.Flush();
+            swExtLogFile.Close();
         }
 
         private void completedBtn_Click(object sender, RoutedEventArgs e)
