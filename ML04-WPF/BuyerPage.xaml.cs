@@ -42,7 +42,7 @@ namespace ML04_WPF
 
         private void contractBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (cmpLogInInfo.cmpID == "" || cmpLogInInfo.cmpPassword == "")
+            if (cmpLogInInfo.cmpID == null || cmpLogInInfo.cmpPassword == null)
             {
                 contractLbl.Text = "Please log in to view contract";
             }
@@ -50,11 +50,12 @@ namespace ML04_WPF
             {
                 contractLbl.Text = "You've got mail";
             }
-            
         }
 
         private void cmpLogInBtn_Click(object sender, RoutedEventArgs e)
         {
+            cmpLogInInfo.cmpID = null;
+            cmpLogInInfo.cmpPassword = null;
             cmpLogIn contractLog = new cmpLogIn();
             contractLog.Show();
         }

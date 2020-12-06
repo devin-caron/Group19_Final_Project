@@ -23,7 +23,6 @@ namespace ML04_WPF
         {
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (cmpUser.Text == "DevOSHT" && cmpPass.Password == "Snodgr4ss!")
@@ -35,6 +34,8 @@ namespace ML04_WPF
             else
             {
                 errorLbl.Content = "bad log in";
+                BuyerPage.cmpLogInInfo.cmpID = null;
+                BuyerPage.cmpLogInInfo.cmpPassword = null;
             }
         }
     }
