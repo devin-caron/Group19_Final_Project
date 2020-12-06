@@ -71,7 +71,6 @@ namespace ML04_WPF
             DataTable dt2 = new DataTable();
             using (MySqlConnection conn = new MySqlConnection(myConnectionString))
             {
-                //-----
                 conn.Open();
                 string query = "SELECT * FROM orders where completed = true";
                 using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
@@ -105,7 +104,7 @@ namespace ML04_WPF
                     conn.ConnectionString = myConnectionString;
                     conn.Open();
 
-                    string sql = "insert into orders (OrderID, Customer, StartLoc, EndLoc, completed) values(" + Int32.Parse(orderID.Text) + ", '" + customer.Text + "', '" + startLoc.Text + "', '" + endLoc.Text + "', false);";
+                    string sql = "insert into orders (OrderID, Customer, StartLoc, EndLoc, trip, completed) values(" + Int32.Parse(orderID.Text) + ", '" + customer.Text + "', '" + startLoc.Text + "', '" + endLoc.Text + "', 0, false);";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     conn.Close();

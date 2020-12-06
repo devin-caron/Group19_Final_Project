@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Text.RegularExpressions;
+using System.IO;
 
 namespace ML04_WPF
 {
@@ -34,6 +38,32 @@ namespace ML04_WPF
             string userName = MainWindow.userLogIn.userID;
 
             userLbl.Content = userName;
+        }
+
+        private void SendOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Invoice_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void completedBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string myConnectionString;
+            myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
+
+            DataTable dt2 = new DataTable();
+            using (MySqlConnection conn = new MySqlConnection(myConnectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM orders where completed = false";
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                    da.Fill(dt2);
+            }
+            contractDataTbl.ItemsSource = dt2.DefaultView;
         }
     }
 }
