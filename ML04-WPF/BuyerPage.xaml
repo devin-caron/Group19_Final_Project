@@ -22,5 +22,6 @@
         <Label Content="Start Location" HorizontalAlignment="Left" Margin="187,402,0,0" VerticalAlignment="Top" Width="84" Height="25"/>
         <Label Content="End Location" HorizontalAlignment="Left" Margin="191,435,0,0" VerticalAlignment="Top" Width="80"/>
         <Label Content="Order ID" HorizontalAlignment="Left" Margin="212,338,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.41,0.654" Width="64"/>
+        <TextBlock x:Name="invoiceLbl" HorizontalAlignment="Left" Margin="243,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
