@@ -8,11 +8,11 @@
         Title="MainWindow" Height="600" Width="600">
     <Grid>
         <Button x:Name="logIn" Content="Log In" HorizontalAlignment="Left" Margin="236,345,0,0" VerticalAlignment="Top" Width="118" Height="40" Click="logIn_Click"/>
-        <TextBlock x:Name="passwordLbl" HorizontalAlignment="Left" Margin="236,221,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20"/>
+        <TextBlock x:Name="passwordLbl" HorizontalAlignment="Left" Margin="236,221,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center"/>
         <TextBox x:Name="pass" HorizontalAlignment="Left" Height="40" Margin="236,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
         <TextBox x:Name="user" HorizontalAlignment="Left" Height="40" Margin="236,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
-        <TextBlock x:Name="userLbl" HorizontalAlignment="Left" Margin="236,81,0,0" TextWrapping="Wrap" Text="User Name:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20"/>
-        <TextBlock x:Name="errorLbl" HorizontalAlignment="Left" Margin="236,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="118" FontSize="20"/>
+        <TextBlock x:Name="userLbl" HorizontalAlignment="Left" Margin="236,81,0,0" TextWrapping="Wrap" Text="User Name:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center"/>
+        <TextBlock x:Name="errorLbl" HorizontalAlignment="Left" Margin="210,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="171" FontSize="20" TextAlignment="Center"/>
 
     </Grid>
 </Window>

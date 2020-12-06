@@ -74,8 +74,7 @@ namespace ML04_WPF
                             Console.WriteLine("You are a planner");
                             userRole = "planner";
 
-                            //PlannerForm objPlanner = new PlannerForm();
-                            //objPlanner.Show();
+                            // go planner page
                         }
                         else
                         {
@@ -101,8 +100,7 @@ namespace ML04_WPF
                                     Console.WriteLine("You are an admin");
                                     userRole = "admin";
 
-                                    //AdminForm objAdmin = new AdminForm();
-                                    //objAdmin.Show();
+                                    // go admin page
                                 }
 
                                 rdr.Close();
@@ -115,6 +113,10 @@ namespace ML04_WPF
                 {
                     Console.WriteLine(ex.Message);
                 }
+            }
+            else
+            {
+                errorLbl.Text = "incorrect login";
             }
             //====DEVIN CURRENTLY TESTING LOG IN FEATURES TO ADD TO LOGINSCREEN====//
         }
