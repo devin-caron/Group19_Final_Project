@@ -23,6 +23,10 @@ namespace ML04_WPF
         public BuyerPage()
         {
             InitializeComponent();
+
+            string userName = MainWindow.userLogIn.userID;
+
+            userLbl.Content = userName;
         }
     }
 }

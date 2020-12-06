@@ -74,7 +74,9 @@ namespace ML04_WPF
                             Console.WriteLine("You are a planner");
                             userRole = "planner";
 
-                            // go planner page
+                            PlannerPage plannerPage = new PlannerPage();
+                            plannerPage.Show();
+
                         }
                         else
                         {
@@ -86,7 +88,8 @@ namespace ML04_WPF
                             {
                                 userRole = "buyer";
 
-                                // go buyer page
+                                BuyerPage buyerPage = new BuyerPage();
+                                buyerPage.Show();
                             }
                             else
                             {
@@ -100,7 +103,8 @@ namespace ML04_WPF
                                     Console.WriteLine("You are an admin");
                                     userRole = "admin";
 
-                                    // go admin page
+                                    AdminPage adminPage = new AdminPage();
+                                    adminPage.Show();
                                 }
 
                                 rdr.Close();

@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ML04_WPF"
         mc:Ignorable="d"
-        Title="Admin" Height="600" Width="600" WindowState="Maximized" ResizeMode="NoResize">
+        Title="Admin" Height="600" Width="600" ResizeMode="NoResize">
     <Grid>
-        
+        <Label x:Name="userdisplay" Content="User: " HorizontalAlignment="Left" Margin="80,65,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="userLbl" Content="Unkown" HorizontalAlignment="Left" Margin="125,65,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

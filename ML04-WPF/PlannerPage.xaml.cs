@@ -22,6 +22,10 @@ namespace ML04_WPF
         public PlannerPage()
         {
             InitializeComponent();
+
+            string userName = MainWindow.userLogIn.userID;
+
+            userLbl.Content = userName;
         }
     }
 }
