@@ -9,6 +9,11 @@
     <Grid>
         <Label Content="User: " HorizontalAlignment="Left" Margin="80,65,0,0" VerticalAlignment="Top"/>
         <Label x:Name="userLbl" Content="Unkown" HorizontalAlignment="Left" Margin="125,65,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="contractBtn" Content="Go" HorizontalAlignment="Left" Margin="207,138,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="contractBtn_Click"/>
+        <Label x:Name="getContractLbl" Content="Get Contract" HorizontalAlignment="Left" Margin="82,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="148" FontSize="20"/>
+        <TextBox x:Name="contractLbl" HorizontalAlignment="Left" Height="190" Margin="82,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.5,0.5" IsReadOnly="True">
+        </TextBox>
+        <Button x:Name="cmpLogInBtn" Content="Log In" HorizontalAlignment="Left" Margin="431,54,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="cmpLogInBtn_Click"/>
 
     </Grid>
 </Window>

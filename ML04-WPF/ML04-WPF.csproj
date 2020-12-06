@@ -77,6 +77,9 @@
     <Compile Include="BuyerPage.xaml.cs">
       <DependentUpon>BuyerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="cmpLogIn.xaml.cs">
+      <DependentUpon>cmpLogIn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PlannerPage.xaml.cs">
       <DependentUpon>PlannerPage.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BuyerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="cmpLogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -35,16 +35,16 @@ namespace ML04_WPF
         {
             //====DEVIN CURRENTLY TESTING LOG IN FEATURES TO ADD TO LOGINSCREEN====//
 
-            if (pass.Text != "" && user.Text != "")
+            if (pass.Password != "" && user.Text != "")
             {
                 string userName = user.Text;
-                string password = pass.Text;
+                string password = pass.Password;
                 string userRole;
 
                 MySqlConnection conn;
 
                 string myConnectionString;
-                myConnectionString = "server=localhost;uid=root;pwd=qazwsx8;database=mssqdatabase";
+                myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
 
                 try
                 {
@@ -76,7 +76,6 @@ namespace ML04_WPF
 
                             PlannerPage plannerPage = new PlannerPage();
                             plannerPage.Show();
-
                         }
                         else
                         {
