@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace ML04_WPF
 {
@@ -44,14 +45,21 @@ namespace ML04_WPF
         {
             if (cmpLogInInfo.cmpID == null || cmpLogInInfo.cmpPassword == null)
             {
-                contractLbl.Text = "Please log in to view contract";
+                
             }
             else
             {
-                contractLbl.Text = "You've got mail";
+                DataTable dt = new DataTable();
+                using (MySqlConnection conn = new MySqlConnection("server=localhost;uid=" + cmpLogInInfo.cmpID + ";pwd=" + cmpLogInInfo.cmpPassword + ";database=cmp"))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM contract";
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                        da.Fill(dt);
+                }
+                contractDataTbl.ItemsSource = dt.DefaultView;
             }
         }
-
         private void cmpLogInBtn_Click(object sender, RoutedEventArgs e)
         {
             cmpLogInInfo.cmpID = null;
@@ -59,5 +67,6 @@ namespace ML04_WPF
             cmpLogIn contractLog = new cmpLogIn();
             contractLog.Show();
         }
+
     }
 }

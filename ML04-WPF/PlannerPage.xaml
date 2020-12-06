@@ -9,5 +9,13 @@
     <Grid>
         <Label Content="User: " HorizontalAlignment="Left" Margin="80,65,0,0" VerticalAlignment="Top"/>
         <Label x:Name="userLbl" Content="Unkown" HorizontalAlignment="Left" Margin="125,65,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="planetExpress" Content="Planet Express" HorizontalAlignment="Left" Margin="194,406,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nominate Carriers" HorizontalAlignment="Left" Margin="185,375,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.282" Width="107"/>
+        <TextBox HorizontalAlignment="Left" Height="68" Margin="101,302,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="291"/>
+        <Label Content="Order Form" HorizontalAlignment="Left" Margin="198,276,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="schooners" Content="Schooners" HorizontalAlignment="Left" Margin="194,426,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="tillmanTransport" Content="Tillman Transport" HorizontalAlignment="Left" Margin="194,446,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="weHaul" Content="We Haul" HorizontalAlignment="Left" Margin="194,466,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SendOrder" Content="Send Order" HorizontalAlignment="Left" Margin="194,496,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.173,0.55"/>
     </Grid>
 </Window>
