@@ -19,6 +19,14 @@ namespace ML04_WPF
     /// </summary>
     public partial class PlannerPage : Window
     {
+        public static class ContractInfo
+        {
+            public static string OrderID { get; set; }
+            public static string Customer { get; set; }
+            public static string StartLoc { get; set; }
+            public static string EndLoc { get; set; }
+        }
+
         public PlannerPage()
         {
             InitializeComponent();

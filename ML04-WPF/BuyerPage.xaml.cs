@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace ML04_WPF
 {
@@ -36,20 +37,16 @@ namespace ML04_WPF
 
             userLbl.Content = userName;
 
-            //contractBtn.IsEnabled = false;
+            contractBtn.IsEnabled = false;
+            SendOrder.IsEnabled = false;
             // log in:
             // DevOSHT
             // Snodgr4ss!
-
         }
 
         private void contractBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (cmpLogInInfo.cmpID == null || cmpLogInInfo.cmpPassword == null)
-            {
-                
-            }
-            else
+            if (cmpLogInInfo.cmpID != null || cmpLogInInfo.cmpPassword != null)
             {
                 DataTable dt = new DataTable();
                 using (MySqlConnection conn = new MySqlConnection("server=localhost;uid=" + cmpLogInInfo.cmpID + ";pwd=" + cmpLogInInfo.cmpPassword + ";database=cmp"))
@@ -68,7 +65,60 @@ namespace ML04_WPF
             cmpLogInInfo.cmpPassword = null;
             cmpLogIn contractLog = new cmpLogIn();
             contractLog.Show();
+
+            // place holder solution
+            contractBtn.IsEnabled = true;
         }
 
+        private void SendOrder_Click(object sender, RoutedEventArgs e)
+        {
+            if ((orderID.Text != "" && IsTextAllowed(orderID.Text) == true) && customer.Text != "" && startLoc.Text != "" && endLoc.Text != "")
+            {
+                MySqlConnection conn;
+
+                string myConnectionString;
+                myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
+
+                try
+                {
+                    conn = new MySqlConnection();
+                    conn.ConnectionString = myConnectionString;
+                    conn.Open();
+
+                    string sql = "insert into orders (OrderID, Customer, StartLoc, EndLoc) values(" + Int32.Parse(orderID.Text) + ", '" + customer.Text + "', '" + startLoc.Text + "', '" + endLoc.Text + "');";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    conn.Close();
+                    rdr.Close();
+
+                    orderID.Text = "";
+                    customer.Text = "";
+                    startLoc.Text = "";
+                    endLoc.Text = "";
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        private static readonly Regex _regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
+
+        private void TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if ((orderID.Text != "" && IsTextAllowed(orderID.Text) == true) && customer.Text != "" && startLoc.Text != "" && endLoc.Text != "")
+            {
+                SendOrder.IsEnabled = true;
+            }
+            else
+            {
+                SendOrder.IsEnabled = false;
+            }
+        }
     }
 }
