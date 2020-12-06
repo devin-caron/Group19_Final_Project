@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ML04_WPF"
         mc:Ignorable="d"
-        Title="Planner" Height="600" Width="600">
+        Title="Planner" Height="600" Width="600" WindowState="Maximized" ResizeMode="NoResize">
     <Grid>
         
     </Grid>
