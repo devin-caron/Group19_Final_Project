@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace ML04_WPF
 {
@@ -23,6 +24,8 @@ namespace ML04_WPF
     /// 
     public partial class BuyerPage : Window
     {
+        private static string sPath = System.AppDomain.CurrentDomain.BaseDirectory;
+
         public static class cmpLogInInfo
         {
             public static string cmpID { get; set; }
@@ -90,6 +93,11 @@ namespace ML04_WPF
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     conn.Close();
                     rdr.Close();
+
+                    string newPath = sPath + "/" + orderID.Text + "_" + customer.Text + "_Invoice.txt";
+
+                    DateTime time = DateTime.Now;
+                    File.AppendAllText(newPath, "Order Time: " + time + "\nOrder ID: " + orderID.Text + "\nCustomer: " + customer.Text + "\nStarting Location: " + startLoc.Text + "\nEnding Location: " + endLoc.Text);
 
                     orderID.Text = "";
                     customer.Text = "";
