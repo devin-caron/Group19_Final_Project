@@ -26,11 +26,6 @@ namespace ML04_WPF
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         public static class userLogIn
         {
             public static string userID { get; set; }
@@ -63,13 +58,13 @@ namespace ML04_WPF
 
                     if (rdr.HasRows == false)
                     {
-                        //errorLbl.Text = "incorrect login";
+                        errorLbl.Text = "incorrect login";
                     }
                     else
                     {
                         userLogIn.userID = userName;
 
-                        //errorLbl.Text = "";
+                        errorLbl.Text = "";
                         rdr.Close();
                         sql = "select userID from userroles where uName ='" + userName + "' AND userRole='planner';";
                         cmd = new MySqlCommand(sql, conn);
@@ -92,9 +87,7 @@ namespace ML04_WPF
                             {
                                 userRole = "buyer";
 
-
-                                //BuyerForm objBuyer = new BuyerForm();
-                                //objBuyer.Show();
+                                // go buyer page
                             }
                             else
                             {
@@ -111,6 +104,7 @@ namespace ML04_WPF
                                     //AdminForm objAdmin = new AdminForm();
                                     //objAdmin.Show();
                                 }
+
                                 rdr.Close();
                                 conn.Close();
                             }
