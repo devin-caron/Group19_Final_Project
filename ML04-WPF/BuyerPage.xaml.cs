@@ -36,9 +36,11 @@ namespace ML04_WPF
 
             userLbl.Content = userName;
 
+            //contractBtn.IsEnabled = false;
             // log in:
             // DevOSHT
             // Snodgr4ss!
+
         }
 
         private void contractBtn_Click(object sender, RoutedEventArgs e)

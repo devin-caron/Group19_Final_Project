@@ -11,12 +11,12 @@
             <ColumnDefinition Width="49*"/>
             <ColumnDefinition Width="248*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="logIn" Content="Log In" HorizontalAlignment="Left" Margin="138.174,369,0,0" VerticalAlignment="Top" Width="118" Height="40" Click="logIn_Click" Grid.Column="1"/>
+        <Button x:Name="logIn" Content="Log In" HorizontalAlignment="Left" Margin="138,340,0,0" VerticalAlignment="Top" Width="118" Height="40" Click="logIn_Click" Grid.Column="1"/>
         <TextBlock x:Name="passwordLbl" HorizontalAlignment="Left" Margin="138.174,221,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center" Grid.Column="1"/>
         <TextBox x:Name="user" HorizontalAlignment="Left" Height="29" Margin="138,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Grid.Column="1"/>
         <TextBlock x:Name="userLbl" HorizontalAlignment="Left" Margin="138.174,89,0,0" TextWrapping="Wrap" Text="User Name:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center" Grid.Column="1"/>
         <TextBlock x:Name="errorLbl" HorizontalAlignment="Left" Margin="112.174,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="171" FontSize="20" TextAlignment="Center" Grid.Column="1"/>
-        <PasswordBox x:Name="pass" Grid.Column="1" HorizontalAlignment="Left" Margin="138,294,0,0" VerticalAlignment="Top" Width="118" Height="29"/>
+        <PasswordBox x:Name="pass" Grid.Column="1" HorizontalAlignment="Left" Margin="138,276,0,0" VerticalAlignment="Top" Width="118" Height="30"/>
 
     </Grid>
 </Window>
