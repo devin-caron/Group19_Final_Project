@@ -89,15 +89,7 @@ namespace ML04_WPF
                 {
 
                 }
-
                 conn.Close();
-
-
-                completedBtn_Click(sender, e);
-
-
-                lblUpdate.Content = "";
-                sendUpdate.Content = "Trip Updated\nInvoice Complete";
 
                 conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
@@ -172,8 +164,6 @@ namespace ML04_WPF
                 }
                 rdr3.Close();
 
-
-                // add cost
                 sql3 = "select FTLRate from carriers where dCity = '" + startLocation + "';";
                 cmd3 = new MySqlCommand(sql3, conn);
                 rdr3 = cmd3.ExecuteReader();
@@ -190,9 +180,21 @@ namespace ML04_WPF
 
                 MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time + (stops * 2)} hours(loads included) with {stops} stops.\nTotal Cost: ${cost}");
 
-                string newPath = sPath + "/" + orderNum.Text + "_" + customer + "_Invoice.txt";
-                File.AppendAllText(newPath, "\nTime: " + time + "\nKm: " + kms + "\nCost: $" + cost + "\n--Invoice Complete--");
                 //-------------------------------------------------------//
+                //string newPath = sPath + "/" + orderNum.Text + "_" + customer + "_Invoice.txt";
+                //File.AppendAllText(newPath, "\nTime: " + time + "\nKm: " + kms + "\nCost: $" + cost + "\n--Invoice Complete--");
+                //-------------------------------------------------------//
+
+                // update cost and km
+                sql3 = "update orders set cost = " + cost + ", kms = " + kms + " where orderID = " + Int32.Parse(orderNum.Text) + ";";
+                cmd3 = new MySqlCommand(sql3, conn);
+                rdr3 = cmd3.ExecuteReader();
+                rdr3.Close();
+
+                completedBtn_Click(sender, e);
+
+                lblUpdate.Content = "";
+                sendUpdate.Content = "Trip Updated";
             }
         }
 
