@@ -74,7 +74,7 @@ namespace ML04_WPF
             try
             {
                 int order = Int32.Parse(orderNum.Text);
-                string sql = "update orders set trip = '" + tripCount + "' where orderID = '" + order + "';";
+                string sql = "update orders set trip = '" + tripCount + "' where orderID = '" + order + "' and completed = false;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
             }
