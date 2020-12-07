@@ -31,6 +31,9 @@ namespace ML04_WPF
         private void backup_Click(object sender, RoutedEventArgs e)
         {
             // backup
+            /*string strCmdText;
+            strCmdText = "/C copy /b Image1.jpg + Archive.rar Image2.jpg";
+            System.Diagnostics.Process.Start("CMD.exe", strCmdText);*/
         }
     }
 }

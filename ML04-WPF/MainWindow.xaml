@@ -8,12 +8,13 @@
         Title="Omnicorp Coorporation" Height="600" Width="600" ResizeMode="NoResize"
         Background="#FFD1EFFF">
     <Grid>
-        <Button x:Name="logIn" Content="Log In" HorizontalAlignment="Left" Margin="229,343,0,0" VerticalAlignment="Top" Width="118" Height="40" Click="logIn_Click" FontWeight="SemiBold"/>
-        <TextBlock x:Name="passwordLbl" HorizontalAlignment="Left" Margin="229,224,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center"/>
-        <TextBox x:Name="user" HorizontalAlignment="Left" Height="29" Margin="229,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
-        <TextBlock x:Name="userLbl" HorizontalAlignment="Left" Margin="229,92,0,0" TextWrapping="Wrap" Text="User Name:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center"/>
-        <TextBlock x:Name="errorLbl" HorizontalAlignment="Left" Margin="203,448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="171" FontSize="20" TextAlignment="Center"/>
-        <PasswordBox x:Name="pass" HorizontalAlignment="Left" Margin="229,279,0,0" VerticalAlignment="Top" Width="118" Height="30"/>
+        <Button x:Name="logIn" Content="Log In" HorizontalAlignment="Left" Margin="235,422,0,0" VerticalAlignment="Top" Width="118" Height="40" Click="logIn_Click" FontWeight="SemiBold"/>
+        <TextBlock x:Name="passwordLbl" HorizontalAlignment="Left" Margin="235,304,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center"/>
+        <TextBox x:Name="user" HorizontalAlignment="Left" Height="30" Margin="235,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
+        <TextBlock x:Name="userLbl" HorizontalAlignment="Left" Margin="235,172,0,0" TextWrapping="Wrap" Text="User Name:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center"/>
+        <TextBlock x:Name="errorLbl" HorizontalAlignment="Left" Margin="205,462,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="172" FontSize="20" TextAlignment="Center"/>
+        <PasswordBox x:Name="pass" HorizontalAlignment="Left" Margin="235,358,0,0" VerticalAlignment="Top" Width="118" Height="30"/>
         <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="53,39,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click"/>
+        <Label Content="TMS Log-In" HorizontalAlignment="Left" Margin="196,84,0,0" VerticalAlignment="Top" Width="192" Height="68" FontSize="36" RenderTransformOrigin="0.497,0.355"/>
     </Grid>
 </Window>

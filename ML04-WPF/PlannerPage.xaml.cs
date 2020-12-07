@@ -71,6 +71,8 @@ namespace ML04_WPF
             conn.ConnectionString = myConnectionString;
             conn.Open();
 
+
+
             if (orderNum.Text != "")
             {
                 try
@@ -79,6 +81,7 @@ namespace ML04_WPF
                     string sql = "update orders set trip = '" + tripCount + "' where orderID = '" + order + "' and completed = false;";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
+                    rdr.Close();
                 }
                 catch (MySqlException ex)
                 {
@@ -86,10 +89,21 @@ namespace ML04_WPF
                 }
 
                 conn.Close();
+                
+
                 completedBtn_Click(sender, e);
+
 
                 lblUpdate.Content = "";
                 sendUpdate.Content = "Trip Updated";
+
+                conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql2 = "select Kms from transportationcorridor where ID;";
+                MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
+                MySqlDataReader rdr2 = cmd2.ExecuteReader();
 
                 MessageBox.Show("Trip will take days with trips");
             }
