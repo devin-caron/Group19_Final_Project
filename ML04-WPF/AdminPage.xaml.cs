@@ -26,6 +26,10 @@ namespace ML04_WPF
         public AdminPage()
         {
             InitializeComponent();
+
+            string userName = MainWindow.userLogIn.userID;
+
+            userLbl.Content = userName;
         }
 
         private void backup_Click(object sender, RoutedEventArgs e)
