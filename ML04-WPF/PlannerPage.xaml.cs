@@ -72,7 +72,6 @@ namespace ML04_WPF
             conn.Open();
 
 
-
             if (orderNum.Text != "")
             {
                 try
@@ -89,7 +88,7 @@ namespace ML04_WPF
                 }
 
                 conn.Close();
-                
+
 
                 completedBtn_Click(sender, e);
 
@@ -101,11 +100,87 @@ namespace ML04_WPF
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
-                string sql2 = "select Kms from transportationcorridor where ID;";
+                string sql2 = "select startLoc from orders where orderID = " + Int32.Parse(orderNum.Text) + ";";
                 MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
                 MySqlDataReader rdr2 = cmd2.ExecuteReader();
 
-                MessageBox.Show("Trip will take days with trips");
+                string startLocation = "";
+                string endLocation = "";
+                string east = "";
+                string kms = "";
+                string time = "";
+
+                while (rdr2.Read())
+                {
+                    var startLoc = rdr2["startLoc"];
+                    startLocation = startLoc.ToString();
+                }
+                rdr2.Close();
+
+
+                sql2 = "select endLoc from orders where orderID = " + Int32.Parse(orderNum.Text) + ";";
+                cmd2 = new MySqlCommand(sql2, conn);
+                rdr2 = cmd2.ExecuteReader();
+
+                while (rdr2.Read())
+                {
+                    var endLoc = rdr2["endLoc"];
+                    endLocation = endLoc.ToString();
+                }
+                rdr2.Close();
+
+
+                sql2 = "select endLoc from orders where orderID = " + Int32.Parse(orderNum.Text) + ";";
+                cmd2 = new MySqlCommand(sql2, conn);
+                rdr2 = cmd2.ExecuteReader();
+
+                while (rdr2.Read())
+                {
+                    var endLoc = rdr2["endLoc"];
+                    endLocation = endLoc.ToString();
+                }
+                rdr2.Close();
+
+                sql2 = "select east from transportationcorridor where destination = '" + startLocation + "';";
+                cmd2 = new MySqlCommand(sql2, conn);
+                rdr2 = cmd2.ExecuteReader();
+
+                while (rdr2.Read())
+                {
+                    var easter = rdr2["east"];
+                    east = easter.ToString();
+                }
+                rdr2.Close();
+
+
+                sql2 = "select kms from transportationcorridor where destination = '" + startLocation + "';";
+                cmd2 = new MySqlCommand(sql2, conn);
+                rdr2 = cmd2.ExecuteReader();
+
+                while (rdr2.Read())
+                {
+                    var kmss = rdr2["kms"];
+                    kms = kmss.ToString();
+                }
+                rdr2.Close();
+
+                sql2 = "select times from transportationcorridor where destination = '" + startLocation + "';";
+                cmd2 = new MySqlCommand(sql2, conn);
+                rdr2 = cmd2.ExecuteReader();
+
+                while (rdr2.Read())
+                {
+                    var times = rdr2["times"];
+                    time = times.ToString();
+                }
+                rdr2.Close();
+
+                if (east != endLocation)
+                {
+
+                }
+
+                MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time} hours with {tripCount} trips.");
             }
         }
         private void Invoice_Click(object sender, RoutedEventArgs e)

@@ -120,6 +120,9 @@ namespace ML04_WPF
                 {
                     
                 }
+
+                user.Text = "";
+                pass.Password = "";
             }
             else
             {
