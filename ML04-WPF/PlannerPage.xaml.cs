@@ -76,7 +76,7 @@ namespace ML04_WPF
                 int order = Int32.Parse(orderNum.Text);
                 string sql = "update orders set trip = '" + tripCount + "' where orderID = '" + order + "';";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader(); 
+                MySqlDataReader rdr = cmd.ExecuteReader();
             }
             catch (MySqlException ex)
             {
@@ -85,6 +85,9 @@ namespace ML04_WPF
 
             conn.Close();
             completedBtn_Click(sender, e);
+
+            lblUpdate.Content = "";
+            sendUpdate.Content = "Trip Updated";
         }
         private void Invoice_Click(object sender, RoutedEventArgs e)
         {
@@ -92,7 +95,7 @@ namespace ML04_WPF
             DataTable dt2 = new DataTable();
 
             string myConnectionString = MainWindow.userLogIn.myConnectionString;
-            
+
             dt2 = new DataTable();
             using (MySqlConnection conn = new MySqlConnection(myConnectionString))
             {
@@ -118,6 +121,8 @@ namespace ML04_WPF
             swExtLogFile.Write(DateTime.Now.ToString());
             swExtLogFile.Flush();
             swExtLogFile.Close();
+            lblUpdate.Content = "Invoice File Created";
+            sendUpdate.Content = "";
         }
 
         private void completedBtn_Click(object sender, RoutedEventArgs e)
@@ -144,20 +149,14 @@ namespace ML04_WPF
             conn.ConnectionString = myConnectionString;
             conn.Open();
 
-            try
-            {
-                string sql = "update orders set completed = true where trip > 0;";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-            }
-            catch (MySqlException ex)
-            {
-
-            }
+            string sql = "update orders set completed = true where trip > 0;";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
 
             conn.Close();
             completedBtn_Click(sender, e);
-            //updateLbl.Content = "";
+            lblUpdate.Content = "Time has been passed, all trips completed.";
+            sendUpdate.Content = "";
         }
 
         private void Box_Checked(object sender, RoutedEventArgs e)

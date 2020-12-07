@@ -22,5 +22,7 @@
         <Button x:Name="Invoice" Content="Invoice" HorizontalAlignment="Left" Margin="463,250,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="Invoice_Click"/>
         <TextBox x:Name="orderNum" HorizontalAlignment="Left" Height="23" Margin="198,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock HorizontalAlignment="Left" Margin="207,293,0,0" TextWrapping="Wrap" Text="Order Number:" VerticalAlignment="Top" Width="95"/>
+        <Label x:Name="lblUpdate" Content="" HorizontalAlignment="Left" Margin="463,299,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="sendUpdate" Content="" HorizontalAlignment="Left" Margin="207,499,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
