@@ -8,16 +8,15 @@
         Title="Admin" Height="600" Width="600" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="userdisplay" Content="User: " HorizontalAlignment="Left" Margin="80,65,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="userLbl" Content="Unkown" HorizontalAlignment="Left" Margin="125,65,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="backup" Content="Backup" HorizontalAlignment="Left" Margin="365,226,0,0" VerticalAlignment="Top" Width="75" Click="backup_Click" RenderTransformOrigin="0.556,0.588"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="125,175,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Alter Database" HorizontalAlignment="Left" Margin="125,146,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="125,213,0,0" TextWrapping="Wrap" Text="cName" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="125,251,0,0" TextWrapping="Wrap" Text="dCity" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="125,290,0,0" TextWrapping="Wrap" Text="FTLA" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="125,334,0,0" TextWrapping="Wrap" Text="LTLA" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="125,373,0,0" TextWrapping="Wrap" Text="FTLRate" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="125,414,0,0" TextWrapping="Wrap" Text="LTLRate" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Backup Database" HorizontalAlignment="Left" Margin="350,195,0,0" VerticalAlignment="Top" Width="106"/>
+        <Label x:Name="userLbl" Content="Unknown" HorizontalAlignment="Left" Margin="125,65,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="backup" Content="Backup" HorizontalAlignment="Left" Margin="456,186,0,0" VerticalAlignment="Top" Width="75" Click="backup_Click" RenderTransformOrigin="0.556,0.588"/>
+        <Label Content="Backup Database" HorizontalAlignment="Left" Margin="443,155,0,0" VerticalAlignment="Top" Width="106"/>
+        <DataGrid x:Name="contractDataTbl" IsReadOnly="true" HorizontalAlignment="Left" Height="100" Margin="102,129,0,0" VerticalAlignment="Top" Width="322"/>
+        <TextBox x:Name="orderID" HorizontalAlignment="Left" Height="23" Margin="187,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="alterBtn" Content="Alter" HorizontalAlignment="Left" Margin="326,288,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.556,0.588" Height="23"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="152,288,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.643,0.703" Height="23"/>
+        <CheckBox Content="Route Table" HorizontalAlignment="Left" Margin="123,252,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Carrier Data" HorizontalAlignment="Left" Margin="224,252,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Rate/Fees Table" HorizontalAlignment="Left" Margin="322,252,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

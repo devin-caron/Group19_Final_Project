@@ -175,7 +175,6 @@ namespace ML04_WPF
 
                 string newPath = sPath + "/" + orderNum.Text + "_" + customer + "_Invoice.txt";
                 File.AppendAllText(newPath, "\nTime: " + time + "\nKm: " + kms + "\n--Invoice Complete--");
-
                 //-------------------------------------------------------//
             }
         }
