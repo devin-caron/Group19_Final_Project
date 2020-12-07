@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ML04_WPF"
         mc:Ignorable="d"
-        Title="Omnicorp Coorporation" Height="600" Width="600" ResizeMode="NoResize">
+        Title="Omnicorp Coorporation" Height="600" Width="600" ResizeMode="NoResize"
+        Background="#FFD1EFFF">
     <Grid>
-        <Button x:Name="logIn" Content="Log In" HorizontalAlignment="Left" Margin="229,343,0,0" VerticalAlignment="Top" Width="118" Height="40" Click="logIn_Click"/>
+        <Button x:Name="logIn" Content="Log In" HorizontalAlignment="Left" Margin="229,343,0,0" VerticalAlignment="Top" Width="118" Height="40" Click="logIn_Click" FontWeight="SemiBold"/>
         <TextBlock x:Name="passwordLbl" HorizontalAlignment="Left" Margin="229,224,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center"/>
         <TextBox x:Name="user" HorizontalAlignment="Left" Height="29" Margin="229,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
         <TextBlock x:Name="userLbl" HorizontalAlignment="Left" Margin="229,92,0,0" TextWrapping="Wrap" Text="User Name:" VerticalAlignment="Top" Height="28" Width="118" FontSize="20" TextAlignment="Center"/>
