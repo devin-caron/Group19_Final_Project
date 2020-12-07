@@ -5,18 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ML04_WPF"
         mc:Ignorable="d"
-        Title="Admin" Height="600" Width="600" ResizeMode="NoResize">
+        Title="Admin" Height="600" Width="600" ResizeMode="NoResize"
+        Background="#FFD1EFFF">
     <Grid>
-        <Label x:Name="userdisplay" Content="User: " HorizontalAlignment="Left" Margin="80,65,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="userdisplay" Content="User: " HorizontalAlignment="Left" Margin="80,65,0,0" VerticalAlignment="Top" FontWeight="SemiBold"/>
         <Label x:Name="userLbl" Content="Unknown" HorizontalAlignment="Left" Margin="125,65,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="backup" Content="Backup" HorizontalAlignment="Left" Margin="456,186,0,0" VerticalAlignment="Top" Width="75" Click="backup_Click" RenderTransformOrigin="0.556,0.588"/>
-        <Label Content="Backup Database" HorizontalAlignment="Left" Margin="443,155,0,0" VerticalAlignment="Top" Width="106"/>
+        <Button x:Name="backup" Content="Backup" HorizontalAlignment="Left" Margin="456,186,0,0" VerticalAlignment="Top" Width="75" Click="backup_Click" RenderTransformOrigin="0.556,0.588" FontWeight="SemiBold"/>
+        <Label Content="Backup Database" HorizontalAlignment="Left" Margin="443,155,0,0" VerticalAlignment="Top" Width="106" FontWeight="SemiBold"/>
         <DataGrid x:Name="contractDataTbl" IsReadOnly="true" HorizontalAlignment="Left" Height="100" Margin="102,129,0,0" VerticalAlignment="Top" Width="322"/>
         <TextBox x:Name="orderID" HorizontalAlignment="Left" Height="23" Margin="187,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="alterBtn" Content="Alter" HorizontalAlignment="Left" Margin="326,288,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.556,0.588" Height="23"/>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="152,288,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.643,0.703" Height="23"/>
-        <CheckBox x:Name="route" Content="Route Table" HorizontalAlignment="Left" Margin="123,252,0,0" VerticalAlignment="Top" Checked="route_Checked"/>
-        <CheckBox x:Name="carrier" Content="Carrier Data" HorizontalAlignment="Left" Margin="224,252,0,0" VerticalAlignment="Top" Checked="carrier_Checked"/>
-        <CheckBox x:Name="rate" Content="Rate/Fees Table" HorizontalAlignment="Left" Margin="322,252,0,0" VerticalAlignment="Top" Checked="rate_Checked"/>
+        <Button x:Name="alterBtn" Content="Alter" HorizontalAlignment="Left" Margin="326,288,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.556,0.588" Height="23" FontWeight="SemiBold"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="152,288,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.643,0.703" Height="23" FontWeight="SemiBold"/>
+        <CheckBox x:Name="route" Content="Route Table" HorizontalAlignment="Left" Margin="123,252,0,0" VerticalAlignment="Top" Checked="route_Checked" FontWeight="SemiBold"/>
+        <CheckBox x:Name="carrier" Content="Carrier Data" HorizontalAlignment="Left" Margin="224,252,0,0" VerticalAlignment="Top" Checked="carrier_Checked" FontWeight="SemiBold"/>
+        <CheckBox x:Name="rate" Content="Rate/Fees Table" HorizontalAlignment="Left" Margin="322,252,0,0" VerticalAlignment="Top" Checked="rate_Checked" FontWeight="SemiBold"/>
+        <Image Margin="13,502,518.6,6.4" Source="truckicon_transparent.png" Stretch="Fill"/>
+        <Image Margin="526,502,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
     </Grid>
 </Window>
