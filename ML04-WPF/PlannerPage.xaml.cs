@@ -285,7 +285,7 @@ namespace ML04_WPF
 
             swExtLogFile.Write("Omnicorp TMS Invoice Report:\n");
             swExtLogFile.Write("All Time Invoice\n");
-            swExtLogFile.Write("ID | Customer | Start | End | Trip | km | cost | Completed\n");
+            swExtLogFile.Write("ID | Customer | Start | End | Trip | Km | Cost($) | Completed\n");
             int i;
             foreach (DataRow row in dt2.Rows)
             {
