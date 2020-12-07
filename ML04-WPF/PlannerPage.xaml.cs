@@ -33,6 +33,8 @@ namespace ML04_WPF
             public static string EndLoc { get; set; }
         }
 
+        private const int loadTime = 4;
+
         public PlannerPage()
         {
             InitializeComponent();
@@ -154,7 +156,7 @@ namespace ML04_WPF
                     time += findTime(location, conn); 
                 }
 
-                time += 4;
+                time += loadTime;
 
                 MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time + (stops * 2)} hours(loads included) with {stops} stops.");
 
