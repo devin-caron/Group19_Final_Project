@@ -155,7 +155,7 @@ namespace ML04_WPF
 
             conn.Close();
             completedBtn_Click(sender, e);
-            lblUpdate.Content = "Time has been passed, all trips completed.";
+            lblUpdate.Content = "Time has been passed.";
             sendUpdate.Content = "";
         }
 
