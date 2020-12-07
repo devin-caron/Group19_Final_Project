@@ -34,6 +34,7 @@ namespace ML04_WPF
         }
 
         private const int loadTime = 4;
+        private const double OSHTCost = 1.08;
 
         public PlannerPage()
         {
@@ -109,7 +110,7 @@ namespace ML04_WPF
                 string startLocation = "";
                 string endLocation = "";
                 string east = "";
-                double kms = 0;
+                int kms = 0;
                 double time = 0;
 
                 while (rdr2.Read())
@@ -158,8 +159,6 @@ namespace ML04_WPF
 
                 time += loadTime;
 
-                MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time + (stops * 2)} hours(loads included) with {stops} stops.");
-
 
                 string sql3 = "select customer from orders where orderID = '" + Int32.Parse(orderNum.Text) + "';";
                 MySqlCommand cmd3 = new MySqlCommand(sql3, conn);
@@ -174,20 +173,29 @@ namespace ML04_WPF
                 rdr3.Close();
 
 
+                // add cost
+                sql3 = "select FTLRate from carriers where dCity = '" + startLocation + "';";
+                cmd3 = new MySqlCommand(sql3, conn);
+                rdr3 = cmd3.ExecuteReader();
 
+                double FTLRate = 0;
+                while (rdr3.Read())
+                {
+                    var FTL = rdr3["FTLRate"];
+                    FTLRate = Convert.ToInt32(FTL);
+                }
+                rdr3.Close();
 
+                double cost = (kms * FTLRate) * OSHTCost;
 
-
-
-
-
+                MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time + (stops * 2)} hours(loads included) with {stops} stops.\nTotal Cost: ${cost}");
 
                 string newPath = sPath + "/" + orderNum.Text + "_" + customer + "_Invoice.txt";
-                File.AppendAllText(newPath, "\nTime: " + time + "\nKm: " + kms + "\n--Invoice Complete--");
+                File.AppendAllText(newPath, "\nTime: " + time + "\nKm: " + kms + "\nCost: $" + cost +"\n--Invoice Complete--");
                 //-------------------------------------------------------//
             }
         }
-
+        
 
         private string findEast(string destination, MySqlConnection conn)
         {
@@ -225,9 +233,9 @@ namespace ML04_WPF
             return destination;
         }
 
-        private double findKMS(string destination, MySqlConnection conn)
+        private int findKMS(string destination, MySqlConnection conn)
         {
-            double kms = 0;
+            int kms = 0;
 
             string sql = "select kms from transportationcorridor where destination = '" + destination + "';";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -236,7 +244,7 @@ namespace ML04_WPF
             while (rdr.Read())
             {
                 var kmss = rdr["kms"];
-                kms = Convert.ToDouble(kmss);
+                kms = Convert.ToInt32(kmss);
             }
             rdr.Close();
 

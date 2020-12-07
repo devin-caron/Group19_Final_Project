@@ -24,7 +24,7 @@
         <TextBox x:Name="orderNum" HorizontalAlignment="Left" Height="23" Margin="198,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock x:Name="orderLbl" HorizontalAlignment="Left" Margin="207,294,0,0" TextWrapping="Wrap" Text="Order Number:" VerticalAlignment="Top" Width="95" FontWeight="SemiBold"/>
         <Label x:Name="lblUpdate" Content="" HorizontalAlignment="Left" Margin="437,293,0,0" VerticalAlignment="Top" Width="147" Height="24"/>
-        <Label x:Name="sendUpdate" Content="" HorizontalAlignment="Left" Margin="207,498,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label x:Name="sendUpdate" Content="" HorizontalAlignment="Left" Margin="207,498,0,0" VerticalAlignment="Top" Width="111"/>
         <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="53,39,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click" FontWeight="SemiBold"/>
         <Image Margin="10,502,525.6,10.4" Source="truckicon_transparent.png" Stretch="Fill"/>
         <Image Margin="533,509,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>

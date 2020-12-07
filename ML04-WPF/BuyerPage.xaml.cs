@@ -102,7 +102,7 @@ namespace ML04_WPF
                     conn.ConnectionString = myConnectionString;
                     conn.Open();
 
-                    string sql = "insert into orders (OrderID, Customer, StartLoc, EndLoc, trip, km, cost, completed) values(" + Int32.Parse(orderID.Text) + ", '" + customer.Text + "', '" + startLoc.Text + "', '" + endLoc.Text + "', null, null, 0, false);";
+                    string sql = "insert into orders (OrderID, Customer, StartLoc, EndLoc, trip, km, cost, completed) values(" + Int32.Parse(orderID.Text) + ", '" + customer.Text + "', '" + startLoc.Text + "', '" + endLoc.Text + "', 0, 0, 0, false);";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     conn.Close();
