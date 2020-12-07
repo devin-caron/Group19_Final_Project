@@ -172,5 +172,14 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="omnicorp_blue_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="truckicon_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="blueLogoRealTransparent.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

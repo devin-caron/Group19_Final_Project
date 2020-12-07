@@ -15,6 +15,8 @@
         <Button Content="Log In" HorizontalAlignment="Left" Margin="99,210,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" FontWeight="SemiBold"/>
         <Label x:Name="errorLbl" Content="" HorizontalAlignment="Left" Margin="99,235,0,0" VerticalAlignment="Top" Width="70"/>
         <PasswordBox x:Name="cmpPass" HorizontalAlignment="Left" Margin="80,172,0,0" VerticalAlignment="Top" Width="120" Height="22" Password="Snodgr4ss!"/>
+        <Image Margin="10,227,247.6,7.4" Source="truckicon_transparent.png" Stretch="Fill"/>
+        <Image Margin="254,230,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
 
     </Grid>
 </Window>
