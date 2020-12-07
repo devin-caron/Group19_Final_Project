@@ -130,27 +130,9 @@ namespace ML04_WPF
                 rdr2.Close();
 
 
-                sql2 = "select endLoc from orders where orderID = " + Int32.Parse(orderNum.Text) + ";";
-                cmd2 = new MySqlCommand(sql2, conn);
-                rdr2 = cmd2.ExecuteReader();
+                //-------------------------------------------------------//
 
-                while (rdr2.Read())
-                {
-                    var endLoc = rdr2["endLoc"];
-                    endLocation = endLoc.ToString();
-                }
-                rdr2.Close();
-
-                sql2 = "select east from transportationcorridor where destination = '" + startLocation + "';";
-                cmd2 = new MySqlCommand(sql2, conn);
-                rdr2 = cmd2.ExecuteReader();
-
-                while (rdr2.Read())
-                {
-                    var easter = rdr2["east"];
-                    east = easter.ToString();
-                }
-                rdr2.Close();
+                east = findEast(startLocation, conn);
 
 
                 sql2 = "select kms from transportationcorridor where destination = '" + startLocation + "';";
@@ -163,6 +145,7 @@ namespace ML04_WPF
                     kms = kmss.ToString();
                 }
                 rdr2.Close();
+
 
                 sql2 = "select times from transportationcorridor where destination = '" + startLocation + "';";
                 cmd2 = new MySqlCommand(sql2, conn);
@@ -179,10 +162,34 @@ namespace ML04_WPF
                 {
 
                 }
+                else
+                {
+                    MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time} hours with {tripCount} trips.");
+                }
 
-                MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time} hours with {tripCount} trips.");
+                //-------------------------------------------------------//
             }
         }
+
+
+        private string findEast(string destination, MySqlConnection conn)
+        {
+            string east = "";
+
+            string sql = "select east from transportationcorridor where destination = '" + destination + "';";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                var easter = rdr["east"];
+                east = easter.ToString();
+            }
+            rdr.Close();
+
+            return east;
+        }
+
         private void Invoice_Click(object sender, RoutedEventArgs e)
         {
             StreamWriter swExtLogFile = new StreamWriter(sPath + "/AllTimeInvoice.txt", true);
