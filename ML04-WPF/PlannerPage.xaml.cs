@@ -270,7 +270,7 @@ namespace ML04_WPF
 
             swExtLogFile.Write(Environment.NewLine);
             swExtLogFile.Write("\nAll Time Invoice\n");
-            swExtLogFile.Write("Order ID | Customer | Start | End | Trip | Completed\n");
+            swExtLogFile.Write("ID | Customer | Start | End | Trip | km | cost | Completed\n");
             int i;
             foreach (DataRow row in dt2.Rows)
             {
