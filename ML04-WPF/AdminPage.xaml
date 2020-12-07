@@ -12,13 +12,13 @@
         <Label x:Name="userLbl" Content="Unknown" HorizontalAlignment="Left" Margin="125,65,0,0" VerticalAlignment="Top"/>
         <Button x:Name="backup" Content="Backup" HorizontalAlignment="Left" Margin="456,186,0,0" VerticalAlignment="Top" Width="75" Click="backup_Click" RenderTransformOrigin="0.556,0.588" FontWeight="SemiBold"/>
         <Label Content="Backup Database" HorizontalAlignment="Left" Margin="443,155,0,0" VerticalAlignment="Top" Width="106" FontWeight="SemiBold"/>
-        <DataGrid x:Name="contractDataTbl" IsReadOnly="true" HorizontalAlignment="Left" Height="100" Margin="102,129,0,0" VerticalAlignment="Top" Width="322"/>
-        <TextBox x:Name="orderID" HorizontalAlignment="Left" Height="23" Margin="187,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="alterBtn" Content="Alter" HorizontalAlignment="Left" Margin="326,288,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.556,0.588" Height="23" FontWeight="SemiBold"/>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="152,288,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.643,0.703" Height="23" FontWeight="SemiBold"/>
-        <CheckBox x:Name="route" Content="Route Table" HorizontalAlignment="Left" Margin="123,252,0,0" VerticalAlignment="Top" Checked="route_Checked" FontWeight="SemiBold"/>
-        <CheckBox x:Name="carrier" Content="Carrier Data" HorizontalAlignment="Left" Margin="224,252,0,0" VerticalAlignment="Top" Checked="carrier_Checked" FontWeight="SemiBold"/>
-        <CheckBox x:Name="rate" Content="Rate/Fees Table" HorizontalAlignment="Left" Margin="322,252,0,0" VerticalAlignment="Top" Checked="rate_Checked" FontWeight="SemiBold"/>
+        <DataGrid x:Name="contractDataTbl" IsReadOnly="true" HorizontalAlignment="Left" Height="194" Margin="102,129,0,0" VerticalAlignment="Top" Width="322"/>
+        <TextBox x:Name="orderID" HorizontalAlignment="Left" Height="23" Margin="170,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+        <Button x:Name="alterBtn" Content="Alter" HorizontalAlignment="Left" Margin="317,379,0,0" VerticalAlignment="Top" Width="79" RenderTransformOrigin="0.556,0.588" Height="23" FontWeight="SemiBold"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="133,379,0,0" VerticalAlignment="Top" Width="32" RenderTransformOrigin="0.643,0.703" Height="23" FontWeight="SemiBold"/>
+        <CheckBox x:Name="route" Content="Route Table" HorizontalAlignment="Left" Margin="102,343,0,0" VerticalAlignment="Top" Checked="route_Checked" FontWeight="SemiBold" Width="89"/>
+        <CheckBox x:Name="carrier" Content="Carrier Data" HorizontalAlignment="Left" Margin="209,343,0,0" VerticalAlignment="Top" Checked="carrier_Checked" FontWeight="SemiBold" Width="90"/>
+        <CheckBox x:Name="rate" Content="Rate/Fees Table" HorizontalAlignment="Left" Margin="313,343,0,0" VerticalAlignment="Top" Checked="rate_Checked" FontWeight="SemiBold" Width="111"/>
         <Image Margin="13,502,518.6,6.4" Source="truckicon_transparent.png" Stretch="Fill"/>
         <Image Margin="526,502,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
     </Grid>

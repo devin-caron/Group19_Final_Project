@@ -49,16 +49,45 @@ namespace ML04_WPF
                     da.Fill(dt);
             }
             contractDataTbl.ItemsSource = dt.DefaultView;
+
+            rate.IsChecked = false;
+            carrier.IsChecked = false;
         }
 
         private void carrier_Checked(object sender, RoutedEventArgs e)
         {
+            string myConnectionString = MainWindow.userLogIn.myConnectionString;
 
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = new MySqlConnection(myConnectionString))
+            {
+                conn.Open();
+                string query = "SELECT cName, dCity, FTLA, LTLA FROM carriers";
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                    da.Fill(dt);
+            }
+            contractDataTbl.ItemsSource = dt.DefaultView;
+
+            rate.IsChecked = false;
+            route.IsChecked = false;
         }
 
         private void rate_Checked(object sender, RoutedEventArgs e)
         {
+            string myConnectionString = MainWindow.userLogIn.myConnectionString;
 
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = new MySqlConnection(myConnectionString))
+            {
+                conn.Open();
+                string query = "SELECT FTLRate, LTLRate, reefCharge FROM carriers";
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                    da.Fill(dt);
+            }
+            contractDataTbl.ItemsSource = dt.DefaultView;
+
+            route.IsChecked = false;
+            carrier.IsChecked = false;
         }
     }
 }

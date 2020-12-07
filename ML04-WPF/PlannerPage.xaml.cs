@@ -96,7 +96,7 @@ namespace ML04_WPF
 
 
                 lblUpdate.Content = "";
-                sendUpdate.Content = "Trip and Invoice Updated";
+                sendUpdate.Content = "Trip Updated\nInvoice Complete";
 
                 conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;

@@ -23,7 +23,7 @@
         <Label Content="Start Location" HorizontalAlignment="Left" Margin="191,427,0,0" VerticalAlignment="Top" Width="84" Height="25" FontWeight="SemiBold"/>
         <Label Content="End Location" HorizontalAlignment="Left" Margin="195,460,0,0" VerticalAlignment="Top" Width="80" FontWeight="SemiBold"/>
         <Label Content="Order ID" HorizontalAlignment="Left" Margin="216,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.41,0.654" Width="64" FontWeight="SemiBold"/>
-        <TextBlock x:Name="invoiceLbl" HorizontalAlignment="Left" Margin="243,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="invoiceLbl" HorizontalAlignment="Left" Margin="243,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Height="39"/>
         <Button x:Name="completedBtn" Content="Go" HorizontalAlignment="Left" Margin="323,157,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="completedBtn_Click" FontWeight="SemiBold"/>
         <Label x:Name="getContractLbl_Copy" Content="Review Completed" HorizontalAlignment="Left" Margin="135,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="188" FontSize="20" FontWeight="SemiBold"/>
         <Label Content="User:" HorizontalAlignment="Left" Margin="48,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308" FontWeight="SemiBold"/>

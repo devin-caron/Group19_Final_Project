@@ -113,7 +113,7 @@ namespace ML04_WPF
                     DateTime time = DateTime.Now;
                     File.AppendAllText(newPath, "Order Time: " + time + "\nOrder ID: " + orderID.Text + "\nCustomer: " + customer.Text + "\nStarting Location: " + startLoc.Text + "\nEnding Location: " + endLoc.Text);
 
-                    invoiceLbl.Text = "Invoice printed to bin folder";
+                    invoiceLbl.Text = "Invoice Started";
 
                     orderID.Text = "";
                     customer.Text = "";
