@@ -114,6 +114,17 @@ namespace ML04_WPF
                     conn.Close();
                     rdr.Close();
 
+
+                    conn = new MySqlConnection();
+                    conn.ConnectionString = myConnectionString;
+                    conn.Open();
+
+                    string sql2 = "insert into customers (CustomerName) values('" + customer.Text + "');";
+                    MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
+                    MySqlDataReader rdr2 = cmd2.ExecuteReader();
+                    conn.Close();
+                    rdr2.Close();
+
                     orderID.Text = "";
                     customer.Text = "";
                     startLoc.Text = "";
@@ -123,16 +134,6 @@ namespace ML04_WPF
                 {
                     Console.WriteLine(ex.Message);
                 }
-
-                conn = new MySqlConnection();
-                conn.ConnectionString = myConnectionString;
-                conn.Open();
-
-                string sql2 = "insert into customers (CustomerName) values('" + customer.Text.ToString() + "');";
-                MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
-                MySqlDataReader rdr2 = cmd2.ExecuteReader();
-                conn.Close();
-                rdr2.Close();
 
                 invoiceLbl.Content = "";
                 sendOrderLbl.Text = "Order sent to planner.";
