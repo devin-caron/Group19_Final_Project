@@ -71,25 +71,28 @@ namespace ML04_WPF
             conn.ConnectionString = myConnectionString;
             conn.Open();
 
-            try
+            if (orderNum.Text != "")
             {
-                int order = Int32.Parse(orderNum.Text);
-                string sql = "update orders set trip = '" + tripCount + "' where orderID = '" + order + "' and completed = false;";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                try
+                {
+                    int order = Int32.Parse(orderNum.Text);
+                    string sql = "update orders set trip = '" + tripCount + "' where orderID = '" + order + "' and completed = false;";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                }
+                catch (MySqlException ex)
+                {
+
+                }
+
+                conn.Close();
+                completedBtn_Click(sender, e);
+
+                lblUpdate.Content = "";
+                sendUpdate.Content = "Trip Updated";
+
+                MessageBox.Show("Trip will take days with trips");
             }
-            catch (MySqlException ex)
-            {
-
-            }
-
-            conn.Close();
-            completedBtn_Click(sender, e);
-
-            lblUpdate.Content = "";
-            sendUpdate.Content = "Trip Updated";
-
-            MessageBox.Show("Trip will take days with trips");
         }
         private void Invoice_Click(object sender, RoutedEventArgs e)
         {
