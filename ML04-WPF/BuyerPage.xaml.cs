@@ -65,8 +65,7 @@ namespace ML04_WPF
 
         private void completedBtn_Click(object sender, RoutedEventArgs e)
         {
-            string myConnectionString;
-            myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
+            string myConnectionString = MainWindow.userLogIn.myConnectionString;
 
             DataTable dt2 = new DataTable();
             using (MySqlConnection conn = new MySqlConnection(myConnectionString))
@@ -95,8 +94,7 @@ namespace ML04_WPF
             {
                 MySqlConnection conn;
 
-                string myConnectionString;
-                myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
+                string myConnectionString = MainWindow.userLogIn.myConnectionString;
 
                 try
                 {

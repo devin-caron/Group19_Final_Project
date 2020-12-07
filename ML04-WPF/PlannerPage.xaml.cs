@@ -40,21 +40,59 @@ namespace ML04_WPF
             string userName = MainWindow.userLogIn.userID;
 
             userLbl.Content = userName;
+
+            SendOrder.IsEnabled = false;
         }
 
         private void SendOrder_Click(object sender, RoutedEventArgs e)
         {
+            int tripCount = 0;
 
+            if (planetExpress.IsChecked == true)
+            {
+                tripCount++;
+            }
+            if (schooners.IsChecked == true)
+            {
+                tripCount++;
+            }
+            if (tillmanTransport.IsChecked == true)
+            {
+                tripCount++;
+            }
+            if (weHaul.IsChecked == true)
+            {
+                tripCount++;
+            }
+
+            string myConnectionString = MainWindow.userLogIn.myConnectionString;
+
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = myConnectionString;
+            conn.Open();
+
+            try
+            {
+                int order = Int32.Parse(orderNum.Text);
+                string sql = "update orders set trip = '" + tripCount + "' where orderID = '" + order + "';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader(); 
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+
+            conn.Close();
+            completedBtn_Click(sender, e);
         }
-
         private void Invoice_Click(object sender, RoutedEventArgs e)
         {
             StreamWriter swExtLogFile = new StreamWriter(sPath + "/AllTimeInvoice.txt", true);
             DataTable dt2 = new DataTable();
 
-            string myConnectionString;
-            myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
-
+            string myConnectionString = MainWindow.userLogIn.myConnectionString;
+            
             dt2 = new DataTable();
             using (MySqlConnection conn = new MySqlConnection(myConnectionString))
             {
@@ -101,6 +139,18 @@ namespace ML04_WPF
         private void passTime_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Box_Checked(object sender, RoutedEventArgs e)
+        {
+            if (planetExpress.IsChecked == true || schooners.IsChecked == true || tillmanTransport.IsChecked == true || weHaul.IsChecked == false)
+            {
+                SendOrder.IsEnabled = true;
+            }
+            else
+            {
+                SendOrder.IsEnabled = false;
+            }
         }
     }
 }

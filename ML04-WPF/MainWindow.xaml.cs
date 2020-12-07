@@ -29,6 +29,8 @@ namespace ML04_WPF
         public static class userLogIn
         {
             public static string userID { get; set; }
+
+            public static string myConnectionString { get; set; }
         }
 
         private void logIn_Click(object sender, RoutedEventArgs e)
@@ -45,6 +47,8 @@ namespace ML04_WPF
 
                 string myConnectionString;
                 myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
+
+                userLogIn.myConnectionString = myConnectionString;
 
                 try
                 {
@@ -114,7 +118,7 @@ namespace ML04_WPF
                 }
                 catch (MySqlException ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    
                 }
             }
             else
