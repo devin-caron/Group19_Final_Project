@@ -10,18 +10,18 @@
 
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="153,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" Text="First Name" Foreground="Gray"/>
-        <TextBlock HorizontalAlignment="Left" Margin="23,80,0,0" TextWrapping="Wrap" Text="Your Name" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,80,0,0" TextWrapping="Wrap" Text="Your Name" VerticalAlignment="Top" FontWeight="SemiBold"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="375,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" Text="Last Name" Foreground="Gray"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="153,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="401" Text="e.g. hello@contact.com" Foreground="Gray"/>
-        <TextBlock HorizontalAlignment="Left" Margin="23,120,0,0" TextWrapping="Wrap" Text="Your Email" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,120,0,0" TextWrapping="Wrap" Text="Your Email" VerticalAlignment="Top" FontWeight="SemiBold"/>
         <TextBlock HorizontalAlignment="Left" Margin="240,24,0,0" TextWrapping="Wrap" Text="Contact Us!" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="153,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Text="###-###-####" Foreground="Gray"/>
-        <TextBlock HorizontalAlignment="Left" Margin="23,162,0,0" TextWrapping="Wrap" Text="Phone #" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,162,0,0" TextWrapping="Wrap" Text="Phone #" VerticalAlignment="Top" FontWeight="SemiBold"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="153,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Text="Contact Us!" Foreground="Gray"/>
-        <TextBlock HorizontalAlignment="Left" Margin="23,206,0,0" TextWrapping="Wrap" Text="Message Subject" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,206,0,0" TextWrapping="Wrap" Text="Message Subject" VerticalAlignment="Top" FontWeight="SemiBold"/>
         <TextBox HorizontalAlignment="Left" Height="100" Margin="153,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="401" Text="Write your message here!" Foreground="Gray"/>
-        <TextBlock HorizontalAlignment="Left" Margin="23,253,0,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="sendEmailBtn" Content="Send Email" HorizontalAlignment="Left" Margin="257,377,0,0" VerticalAlignment="Top" Width="75" FontWeight="Medium" Click="sendEmailBtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,253,0,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" FontWeight="SemiBold"/>
+        <Button x:Name="sendEmailBtn" Content="Send Email" HorizontalAlignment="Left" Margin="257,377,0,0" VerticalAlignment="Top" Width="75" FontWeight="SemiBold" Click="sendEmailBtn_Click"/>
         <Image Margin="14,349,511.6,3" Source="truckicon_transparent.png" Stretch="Fill"/>
         <Image Margin="526,355,9.6,7" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
 

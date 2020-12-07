@@ -9,23 +9,23 @@
         Background="#FFD1EFFF">
     <Grid>
         <CheckBox x:Name="planetExpress" Content="Planet Express" HorizontalAlignment="Left" Margin="207,371,0,0" VerticalAlignment="Top" Checked="Box_Checked"/>
-        <Label Content="Nominate Carriers" HorizontalAlignment="Left" Margin="198,340,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.282" Width="107"/>
+        <Label Content="Nominate Carriers" HorizontalAlignment="Left" Margin="198,340,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.238,0.282" Width="109" FontWeight="SemiBold"/>
         <CheckBox x:Name="schooners" Content="Schooners" HorizontalAlignment="Left" Margin="207,391,0,0" VerticalAlignment="Top" Checked="Box_Checked"/>
         <CheckBox x:Name="tillmanTransport" Content="Tillman Transport" HorizontalAlignment="Left" Margin="207,411,0,0" VerticalAlignment="Top" Checked="Box_Checked"/>
         <CheckBox x:Name="weHaul" Content="We Haul" HorizontalAlignment="Left" Margin="207,431,0,0" VerticalAlignment="Top" Checked="Box_Checked"/>
         <Button x:Name="SendOrder" Content="Send Order" HorizontalAlignment="Left" Margin="207,461,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.173,0.55" Click="SendOrder_Click" FontWeight="SemiBold"/>
-        <Label x:Name="userLbl" Content="Unkown" HorizontalAlignment="Left" Margin="94,8,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="userLbl" Content="Unknown" HorizontalAlignment="Left" Margin="94,8,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="contractDataTbl" IsReadOnly="true" HorizontalAlignment="Left" Height="100" Margin="115,188,0,0" VerticalAlignment="Top" Width="322"/>
         <Button x:Name="completedBtn" Content="Go" HorizontalAlignment="Left" Margin="303,115,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="completedBtn_Click" FontWeight="SemiBold"/>
-        <Label x:Name="getContractLbl_Copy" Content="Receive Orders" HorizontalAlignment="Left" Margin="149,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="154" FontSize="20"/>
-        <Label Content="User:" HorizontalAlignment="Left" Margin="53,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308"/>
+        <Label x:Name="getContractLbl_Copy" Content="Receive Orders" HorizontalAlignment="Left" Margin="149,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="154" FontSize="20" FontWeight="SemiBold"/>
+        <Label Content="User:" HorizontalAlignment="Left" Margin="53,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308" FontWeight="SemiBold"/>
         <Button x:Name="passTime" Content="Pass Time" HorizontalAlignment="Left" Margin="463,203,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="passTime_Click" FontWeight="SemiBold"/>
         <Button x:Name="Invoice" Content="Invoice" HorizontalAlignment="Left" Margin="463,250,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="Invoice_Click" FontWeight="SemiBold"/>
         <TextBox x:Name="orderNum" HorizontalAlignment="Left" Height="23" Margin="198,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.5,0.5"/>
-        <TextBlock x:Name="orderLbl" HorizontalAlignment="Left" Margin="207,293,0,0" TextWrapping="Wrap" Text="Order Number:" VerticalAlignment="Top" Width="95"/>
+        <TextBlock x:Name="orderLbl" HorizontalAlignment="Left" Margin="207,294,0,0" TextWrapping="Wrap" Text="Order Number:" VerticalAlignment="Top" Width="95" FontWeight="SemiBold"/>
         <Label x:Name="lblUpdate" Content="" HorizontalAlignment="Left" Margin="437,293,0,0" VerticalAlignment="Top" Width="147" Height="24"/>
         <Label x:Name="sendUpdate" Content="" HorizontalAlignment="Left" Margin="207,498,0,0" VerticalAlignment="Top" Width="86"/>
-        <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="53,39,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click"/>
+        <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="53,39,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click" FontWeight="SemiBold"/>
         <Image Margin="10,502,525.6,10.4" Source="truckicon_transparent.png" Stretch="Fill"/>
         <Image Margin="533,509,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
     </Grid>
