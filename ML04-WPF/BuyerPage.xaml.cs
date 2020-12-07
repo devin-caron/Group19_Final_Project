@@ -102,7 +102,7 @@ namespace ML04_WPF
                     conn.ConnectionString = myConnectionString;
                     conn.Open();
 
-                    string sql = "insert into orders (OrderID, Customer, StartLoc, EndLoc, trip, km, cost, completed) values(" + Int32.Parse(orderID.Text) + ", '" + customer.Text + "', '" + startLoc.Text + "', '" + endLoc.Text + "', 0, 0, 0, false);";
+                    string sql = "insert into orders (OrderID, Customer, StartLoc, EndLoc, trip, kms, cost, completed) values(" + Int32.Parse(orderID.Text) + ", '" + customer.Text + "', '" + startLoc.Text + "', '" + endLoc.Text + "', 0, 0, 0.0, false);";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     conn.Close();
@@ -111,7 +111,7 @@ namespace ML04_WPF
                     string newPath = sPath + "/" + orderID.Text + "_" + customer.Text + "_Invoice.txt";
 
                     DateTime time = DateTime.Now;
-                    File.AppendAllText(newPath, "Order Time: " + time + "\nOrder ID: " + orderID.Text + "\nCustomer: " + customer.Text + "\nStarting Location: " + startLoc.Text + "\nEnding Location: " + endLoc.Text);
+                    File.AppendAllText(newPath, "Omnicorp TMS Invoice\nOrder Time: " + time + "\nOrder ID: " + orderID.Text + "\nCustomer: " + customer.Text + "\nStarting Location: " + startLoc.Text + "\nEnding Location: " + endLoc.Text);
 
                     invoiceLbl.Text = "Invoice Started";
 

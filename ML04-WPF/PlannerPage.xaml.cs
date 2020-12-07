@@ -144,17 +144,17 @@ namespace ML04_WPF
 
                 time = findTime(startLocation, conn);
 
-                while (east != endLocation) 
+                while (east != endLocation)
                 {
                     stops++;
 
-                    east = findEast(east, conn); 
+                    east = findEast(east, conn);
 
-                    location = findStart(east, conn); 
+                    location = findStart(east, conn);
 
-                    kms += findKMS(location, conn); 
+                    kms += findKMS(location, conn);
 
-                    time += findTime(location, conn); 
+                    time += findTime(location, conn);
                 }
 
                 time += loadTime;
@@ -191,11 +191,11 @@ namespace ML04_WPF
                 MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time + (stops * 2)} hours(loads included) with {stops} stops.\nTotal Cost: ${cost}");
 
                 string newPath = sPath + "/" + orderNum.Text + "_" + customer + "_Invoice.txt";
-                File.AppendAllText(newPath, "\nTime: " + time + "\nKm: " + kms + "\nCost: $" + cost +"\n--Invoice Complete--");
+                File.AppendAllText(newPath, "\nTime: " + time + "\nKm: " + kms + "\nCost: $" + cost + "\n--Invoice Complete--");
                 //-------------------------------------------------------//
             }
         }
-        
+
 
         private string findEast(string destination, MySqlConnection conn)
         {
@@ -240,7 +240,7 @@ namespace ML04_WPF
             string sql = "select kms from transportationcorridor where destination = '" + destination + "';";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
-           
+
             while (rdr.Read())
             {
                 var kmss = rdr["kms"];
@@ -271,6 +271,8 @@ namespace ML04_WPF
 
         private void Invoice_Click(object sender, RoutedEventArgs e)
         {
+            File.WriteAllText(sPath + "/AllTimeInvoice.txt", "");
+
             StreamWriter swExtLogFile = new StreamWriter(sPath + "/AllTimeInvoice.txt", true);
             DataTable dt2 = new DataTable();
 
@@ -285,8 +287,8 @@ namespace ML04_WPF
                     da.Fill(dt2);
             }
 
-            swExtLogFile.Write(Environment.NewLine);
-            swExtLogFile.Write("\nAll Time Invoice\n");
+            swExtLogFile.Write("Omnicorp TMS Invoice Report:\n");
+            swExtLogFile.Write("All Time Invoice\n");
             swExtLogFile.Write("ID | Customer | Start | End | Trip | km | cost | Completed\n");
             int i;
             foreach (DataRow row in dt2.Rows)
