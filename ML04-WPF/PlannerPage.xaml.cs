@@ -88,6 +88,8 @@ namespace ML04_WPF
 
             lblUpdate.Content = "";
             sendUpdate.Content = "Trip Updated";
+
+            MessageBox.Show("Trip will take days with trips");
         }
         private void Invoice_Click(object sender, RoutedEventArgs e)
         {
@@ -118,6 +120,7 @@ namespace ML04_WPF
                 }
                 swExtLogFile.WriteLine(array[i].ToString());
             }
+
             swExtLogFile.Write(DateTime.Now.ToString());
             swExtLogFile.Flush();
             swExtLogFile.Close();
