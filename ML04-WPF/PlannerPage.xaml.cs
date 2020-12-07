@@ -129,7 +129,6 @@ namespace ML04_WPF
                 int stops = 0;
                 string location = "";
 
-
                 east = findEast(startLocation, conn);
 
                 kms = findKMS(startLocation, conn);
@@ -180,12 +179,7 @@ namespace ML04_WPF
 
                 MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time + (stops * 2)} hours(loads included) with {stops} stops.\nTotal Cost: ${cost}");
 
-                //-------------------------------------------------------//
-                //string newPath = sPath + "/" + orderNum.Text + "_" + customer + "_Invoice.txt";
-                //File.AppendAllText(newPath, "\nTime: " + time + "\nKm: " + kms + "\nCost: $" + cost + "\n--Invoice Complete--");
-                //-------------------------------------------------------//
 
-                // update cost and km
                 sql3 = "update orders set cost = " + cost + ", kms = " + kms + " where orderID = " + Int32.Parse(orderNum.Text) + ";";
                 cmd3 = new MySqlCommand(sql3, conn);
                 rdr3 = cmd3.ExecuteReader();

@@ -24,6 +24,8 @@ namespace ML04_WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            userLogIn.myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
         }
 
         public static class userLogIn
@@ -35,8 +37,6 @@ namespace ML04_WPF
 
         private void logIn_Click(object sender, RoutedEventArgs e)
         {
-            //====DEVIN CURRENTLY TESTING LOG IN FEATURES TO ADD TO LOGINSCREEN====//
-
             if (pass.Password != "" && user.Text != "")
             {
                 string userName = user.Text;
@@ -45,10 +45,7 @@ namespace ML04_WPF
 
                 MySqlConnection conn;
 
-                string myConnectionString;
-                myConnectionString = "server=localhost;uid=SQUser;pwd=SQUser;database=mssqdatabase";
-
-                userLogIn.myConnectionString = myConnectionString;
+                string myConnectionString = userLogIn.myConnectionString;
 
                 try
                 {
@@ -128,7 +125,6 @@ namespace ML04_WPF
             {
                 errorLbl.Text = "incorrect login";
             }
-            //====DEVIN CURRENTLY TESTING LOG IN FEATURES TO ADD TO LOGINSCREEN====//
         }
 
         private void supportBtn_Click(object sender, RoutedEventArgs e)

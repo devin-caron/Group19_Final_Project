@@ -20,7 +20,7 @@
         <TextBox x:Name="startLoc" HorizontalAlignment="Left" Height="28" Margin="280,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="TextChanged"/>
         <TextBox x:Name="endLoc" HorizontalAlignment="Left" Height="28" Margin="280,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="TextChanged"/>
         <Label Content="Customer" HorizontalAlignment="Left" Margin="211,394,0,0" VerticalAlignment="Top" Width="64" FontWeight="SemiBold"/>
-        <Label Content="Start Location" HorizontalAlignment="Left" Margin="191,427,0,0" VerticalAlignment="Top" Width="84" Height="25" FontWeight="SemiBold"/>
+        <Label Content="Start Location" HorizontalAlignment="Left" Margin="189,427,0,0" VerticalAlignment="Top" Width="91" Height="25" FontWeight="SemiBold"/>
         <Label Content="End Location" HorizontalAlignment="Left" Margin="195,460,0,0" VerticalAlignment="Top" Width="80" FontWeight="SemiBold"/>
         <Label Content="Order ID" HorizontalAlignment="Left" Margin="216,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.41,0.654" Width="64" FontWeight="SemiBold"/>
         <TextBlock x:Name="invoiceLbl" HorizontalAlignment="Left" Margin="243,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Height="39"/>
@@ -31,5 +31,7 @@
         <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="48,47,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click" FontWeight="SemiBold"/>
         <Image Margin="13,502,518.6,6.4" Source="truckicon_transparent.png" Stretch="Fill"/>
         <Image Margin="526,502,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
+        <Button x:Name="invoiceBtn" Content="Print Invoice" HorizontalAlignment="Left" Margin="392,361,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="invoiceBtn_Click"/>
+        <Label x:Name="invoiceLbl1" Content="" HorizontalAlignment="Left" Margin="472,352,0,0" VerticalAlignment="Top" Height="70" Width="72"/>
     </Grid>
 </Window>
