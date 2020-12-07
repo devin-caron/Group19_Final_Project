@@ -33,5 +33,6 @@
         <Image Margin="526,502,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
         <Button x:Name="invoiceBtn" Content="Print Invoice" HorizontalAlignment="Left" Margin="392,361,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="invoiceBtn_Click"/>
         <Label x:Name="invoiceLbl" Content="" HorizontalAlignment="Left" Margin="472,352,0,0" VerticalAlignment="Top" Height="70" Width="72"/>
+        <Button x:Name="ReviewCustomers" Content="Review Customers" HorizontalAlignment="Left" Margin="24,254,0,0" VerticalAlignment="Top" Width="106" Height="38" Click="ReviewCustomers_Click"/>
     </Grid>
 </Window>

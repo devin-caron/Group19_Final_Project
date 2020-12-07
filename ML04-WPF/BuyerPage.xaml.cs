@@ -61,6 +61,9 @@ namespace ML04_WPF
                 }
                 contractDataTbl.ItemsSource = dt.DefaultView;
             }
+
+            invoiceLbl.Content = "";
+            sendOrderLbl.Text = "";
         }
 
         private void completedBtn_Click(object sender, RoutedEventArgs e)
@@ -76,6 +79,9 @@ namespace ML04_WPF
                     da.Fill(dt2);
             }
             contractDataTbl.ItemsSource = dt2.DefaultView;
+
+            invoiceLbl.Content = "";
+            sendOrderLbl.Text = "";
         }
         private void cmpLogInBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -117,6 +123,16 @@ namespace ML04_WPF
                 {
                     Console.WriteLine(ex.Message);
                 }
+
+                conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql2 = "insert into customers (CustomerName) values('" + customer.Text.ToString() + "');";
+                MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
+                MySqlDataReader rdr2 = cmd2.ExecuteReader();
+                conn.Close();
+                rdr2.Close();
 
                 invoiceLbl.Content = "";
                 sendOrderLbl.Text = "Order sent to planner.";
@@ -164,7 +180,7 @@ namespace ML04_WPF
                 }
                 rdr.Close();
 
-                if(completed == true)
+                if (completed == true)
                 {
                     string customer = "";
                     string startLoc = "";
@@ -217,6 +233,24 @@ namespace ML04_WPF
         private static bool IsTextAllowed(string text)
         {
             return !_regex.IsMatch(text);
+        }
+
+        private void ReviewCustomers_Click(object sender, RoutedEventArgs e)
+        {
+            string myConnectionString = MainWindow.userLogIn.myConnectionString;
+
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = new MySqlConnection(myConnectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM customers";
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                    da.Fill(dt);
+            }
+            contractDataTbl.ItemsSource = dt.DefaultView;
+
+            invoiceLbl.Content = "";
+            sendOrderLbl.Text = "";
         }
     }
 }
