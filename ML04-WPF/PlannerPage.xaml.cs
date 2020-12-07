@@ -94,7 +94,7 @@ namespace ML04_WPF
 
 
                 lblUpdate.Content = "";
-                sendUpdate.Content = "Trip Updated";
+                sendUpdate.Content = "Trip and Invoice Updated";
 
                 conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
@@ -141,20 +141,38 @@ namespace ML04_WPF
 
                 time = findTime(startLocation, conn);
 
-                while (east != endLocation) // london
+                while (east != endLocation) 
                 {
                     stops++;
 
-                    east = findEast(east, conn); // hamilton
+                    east = findEast(east, conn); 
 
-                    location = findStart(east, conn); // london
+                    location = findStart(east, conn); 
 
-                    kms += findKMS(location, conn); // 191 + 128
+                    kms += findKMS(location, conn); 
 
-                    time += findTime(location, conn); // 2.5 + 1.7
+                    time += findTime(location, conn); 
                 }
-                
-                MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time + (stops * 2)} hours with {tripCount} trips and {stops} stops.");
+
+                time += 4;
+
+                MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time + (stops * 2)} hours(loads included) with {stops} stops.");
+
+
+                string sql3 = "select customer from orders where orderID = '" + Int32.Parse(orderNum.Text) + "';";
+                MySqlCommand cmd3 = new MySqlCommand(sql3, conn);
+                MySqlDataReader rdr3 = cmd3.ExecuteReader();
+
+                string customer = "";
+                while (rdr3.Read())
+                {
+                    var customerName = rdr3["customer"];
+                    customer = customerName.ToString();
+                }
+                rdr3.Close();
+
+                string newPath = sPath + "/" + orderNum.Text + "_" + customer + "_Invoice.txt";
+                File.AppendAllText(newPath, "\nTime: " + time + "\nKm: " + kms + "\n--Invoice Complete--");
 
                 //-------------------------------------------------------//
             }
