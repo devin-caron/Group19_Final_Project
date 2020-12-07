@@ -28,7 +28,7 @@
         <Label x:Name="getContractLbl_Copy" Content="Review Completed" HorizontalAlignment="Left" Margin="135,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="188" FontSize="20"/>
         <Label Content="User:" HorizontalAlignment="Left" Margin="48,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308"/>
         <Label Content="Contract Marketplace" HorizontalAlignment="Left" Margin="464,21,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="48,47,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click"/>
+        <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="48,47,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click" FontWeight="SemiBold"/>
         <Image Margin="13,502,518.6,6.4" Source="truckicon_transparent.png" Stretch="Fill"/>
         <Image Margin="526,502,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
     </Grid>
