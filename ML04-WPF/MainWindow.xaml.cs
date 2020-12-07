@@ -127,5 +127,11 @@ namespace ML04_WPF
             }
             //====DEVIN CURRENTLY TESTING LOG IN FEATURES TO ADD TO LOGINSCREEN====//
         }
+
+        private void supportBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Email emailPage = new Email();
+            emailPage.Show();
+        }
     }
 }

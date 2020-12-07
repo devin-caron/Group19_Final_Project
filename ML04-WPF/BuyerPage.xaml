@@ -28,5 +28,6 @@
         <Label x:Name="getContractLbl_Copy" Content="Review Completed" HorizontalAlignment="Left" Margin="135,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="188" FontSize="20"/>
         <Label Content="User:" HorizontalAlignment="Left" Margin="48,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308"/>
         <Label Content="Contact Marketplace" HorizontalAlignment="Left" Margin="464,21,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="48,47,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click"/>
     </Grid>
 </Window>

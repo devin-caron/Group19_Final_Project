@@ -173,5 +173,11 @@ namespace ML04_WPF
                 SendOrder.IsEnabled = false;
             }
         }
+
+        private void supportBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Email emailPage = new Email();
+            emailPage.Show();
+        }
     }
 }

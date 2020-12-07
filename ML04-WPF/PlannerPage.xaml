@@ -25,5 +25,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="207,293,0,0" TextWrapping="Wrap" Text="Order Number:" VerticalAlignment="Top" Width="95"/>
         <Label x:Name="lblUpdate" Content="" HorizontalAlignment="Left" Margin="437,293,0,0" VerticalAlignment="Top" Width="147" Height="24"/>
         <Label x:Name="sendUpdate" Content="" HorizontalAlignment="Left" Margin="207,498,0,0" VerticalAlignment="Top" Width="86"/>
+        <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="53,39,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click"/>
     </Grid>
 </Window>
