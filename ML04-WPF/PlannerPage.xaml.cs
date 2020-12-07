@@ -49,8 +49,6 @@ namespace ML04_WPF
 
         private void Invoice_Click(object sender, RoutedEventArgs e)
         {
-            completedBtn_Click(sender, e);
-
             StreamWriter swExtLogFile = new StreamWriter(sPath + "/AllTimeInvoice.txt", true);
             DataTable dt2 = new DataTable();
 
@@ -67,6 +65,8 @@ namespace ML04_WPF
             }
 
             swExtLogFile.Write(Environment.NewLine);
+            swExtLogFile.Write("\nAll Time Invoice\n");
+            swExtLogFile.Write("Order ID | Customer | Start | End | Trip | Completed\n");
             int i;
             foreach (DataRow row in dt2.Rows)
             {
@@ -96,6 +96,11 @@ namespace ML04_WPF
                     da.Fill(dt2);
             }
             contractDataTbl.ItemsSource = dt2.DefaultView;
+        }
+
+        private void passTime_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -18,7 +18,7 @@
         <Button x:Name="completedBtn" Content="Go" HorizontalAlignment="Left" Margin="303,115,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="completedBtn_Click"/>
         <Label x:Name="getContractLbl_Copy" Content="Recieve Orders" HorizontalAlignment="Left" Margin="149,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="154" FontSize="20"/>
         <Label Content="User:" HorizontalAlignment="Left" Margin="53,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308"/>
-        <Button Content="Pass Time" HorizontalAlignment="Left" Margin="463,203,0,0" VerticalAlignment="Top" Width="75" Height="28"/>
+        <Button x:Name="passTime" Content="Pass Time" HorizontalAlignment="Left" Margin="463,203,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="passTime_Click"/>
         <Button x:Name="Invoice" Content="Invoice" HorizontalAlignment="Left" Margin="463,250,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="Invoice_Click"/>
         <TextBox x:Name="orderNum" HorizontalAlignment="Left" Height="23" Margin="198,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
