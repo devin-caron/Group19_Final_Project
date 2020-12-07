@@ -107,8 +107,8 @@ namespace ML04_WPF
                 string startLocation = "";
                 string endLocation = "";
                 string east = "";
-                string kms = "";
-                string time = "";
+                double kms = 0;
+                double time = 0;
 
                 while (rdr2.Read())
                 {
@@ -131,41 +131,30 @@ namespace ML04_WPF
 
 
                 //-------------------------------------------------------//
+                int stops = 0;
+                string location = "";
+
 
                 east = findEast(startLocation, conn);
 
+                kms = findKMS(startLocation, conn);
 
-                sql2 = "select kms from transportationcorridor where destination = '" + startLocation + "';";
-                cmd2 = new MySqlCommand(sql2, conn);
-                rdr2 = cmd2.ExecuteReader();
+                time = findTime(startLocation, conn);
 
-                while (rdr2.Read())
+                while (east != endLocation) // london
                 {
-                    var kmss = rdr2["kms"];
-                    kms = kmss.ToString();
+                    stops++;
+
+                    east = findEast(east, conn); // hamilton
+
+                    location = findStart(east, conn); // london
+
+                    kms += findKMS(location, conn); // 191 + 128
+
+                    time += findTime(location, conn); // 2.5 + 1.7
                 }
-                rdr2.Close();
-
-
-                sql2 = "select times from transportationcorridor where destination = '" + startLocation + "';";
-                cmd2 = new MySqlCommand(sql2, conn);
-                rdr2 = cmd2.ExecuteReader();
-
-                while (rdr2.Read())
-                {
-                    var times = rdr2["times"];
-                    time = times.ToString();
-                }
-                rdr2.Close();
-
-                if (east != endLocation)
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time} hours with {tripCount} trips.");
-                }
+                
+                MessageBox.Show($"Trip from {startLocation} to {endLocation} will be {kms}km and take {time + (stops * 2)} hours with {tripCount} trips and {stops} stops.");
 
                 //-------------------------------------------------------//
             }
@@ -188,6 +177,60 @@ namespace ML04_WPF
             rdr.Close();
 
             return east;
+        }
+
+        private string findStart(string east, MySqlConnection conn)
+        {
+            string destination = "";
+
+            string sql = "select destination from transportationcorridor where east = '" + east + "';";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                var dest = rdr["destination"];
+                destination = dest.ToString();
+            }
+            rdr.Close();
+
+            return destination;
+        }
+
+        private double findKMS(string destination, MySqlConnection conn)
+        {
+            double kms = 0;
+
+            string sql = "select kms from transportationcorridor where destination = '" + destination + "';";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+           
+            while (rdr.Read())
+            {
+                var kmss = rdr["kms"];
+                kms = Convert.ToDouble(kmss);
+            }
+            rdr.Close();
+
+            return kms;
+        }
+
+        private double findTime(string destination, MySqlConnection conn)
+        {
+            double time = 0;
+
+            string sql = "select times from transportationcorridor where destination = '" + destination + "';";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                var times = rdr["times"];
+                time = Convert.ToDouble(times);
+            }
+            rdr.Close();
+
+            return time;
         }
 
         private void Invoice_Click(object sender, RoutedEventArgs e)
