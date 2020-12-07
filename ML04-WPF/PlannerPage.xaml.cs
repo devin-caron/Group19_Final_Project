@@ -138,7 +138,25 @@ namespace ML04_WPF
 
         private void passTime_Click(object sender, RoutedEventArgs e)
         {
+            string myConnectionString = MainWindow.userLogIn.myConnectionString;
 
+            MySqlConnection conn = new MySqlConnection();
+            conn.ConnectionString = myConnectionString;
+            conn.Open();
+
+            try
+            {
+                string sql = "update orders set completed = true where trip > 0;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+
+            conn.Close();
+            completedBtn_Click(sender, e);
         }
 
         private void Box_Checked(object sender, RoutedEventArgs e)
