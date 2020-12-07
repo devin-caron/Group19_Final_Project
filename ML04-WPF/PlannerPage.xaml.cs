@@ -100,7 +100,7 @@ namespace ML04_WPF
             using (MySqlConnection conn = new MySqlConnection(myConnectionString))
             {
                 conn.Open();
-                string query = "SELECT * FROM orders where completed = false";
+                string query = "SELECT * FROM orders where completed = true;";
                 using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
                     da.Fill(dt2);
             }
