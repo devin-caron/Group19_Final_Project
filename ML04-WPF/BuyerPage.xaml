@@ -10,24 +10,24 @@
     <Grid>
         <Label x:Name="userLbl" Content="Unknown" HorizontalAlignment="Left" Margin="89,21,0,0" VerticalAlignment="Top"/>
         <Button x:Name="contractBtn" Content="Go" HorizontalAlignment="Left" Margin="323,96,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="contractBtn_Click" FontWeight="SemiBold"/>
-        <Label x:Name="getContractLbl" Content="Get Contracts" HorizontalAlignment="Left" Margin="175,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="148" FontSize="20"/>
+        <Label x:Name="getContractLbl" Content="Get Contracts" HorizontalAlignment="Left" Margin="175,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="148" FontSize="20" FontWeight="SemiBold"/>
         <Button x:Name="cmpLogInBtn" Content="Log In" HorizontalAlignment="Left" Margin="486,52,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="cmpLogInBtn_Click" FontWeight="SemiBold"/>
         <DataGrid x:Name="contractDataTbl" IsReadOnly="true" HorizontalAlignment="Left" Height="100" Margin="144,222,0,0" VerticalAlignment="Top" Width="323"/>
         <TextBox x:Name="orderID" HorizontalAlignment="Left" Height="28" Margin="280,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="TextChanged"/>
-        <Label Content="Order Form" HorizontalAlignment="Left" Margin="245,327,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Order Form" HorizontalAlignment="Left" Margin="245,327,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="SemiBold"/>
         <Button x:Name="SendOrder" Content="Send Order" HorizontalAlignment="Left" Margin="262,504,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.173,0.55" Click="SendOrder_Click" FontWeight="SemiBold"/>
         <TextBox x:Name="customer" HorizontalAlignment="Left" Height="28" Margin="280,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="TextChanged"/>
         <TextBox x:Name="startLoc" HorizontalAlignment="Left" Height="28" Margin="280,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="TextChanged"/>
         <TextBox x:Name="endLoc" HorizontalAlignment="Left" Height="28" Margin="280,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TextChanged="TextChanged"/>
-        <Label Content="Customer" HorizontalAlignment="Left" Margin="211,394,0,0" VerticalAlignment="Top" Width="64"/>
-        <Label Content="Start Location" HorizontalAlignment="Left" Margin="191,427,0,0" VerticalAlignment="Top" Width="84" Height="25"/>
-        <Label Content="End Location" HorizontalAlignment="Left" Margin="195,460,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label Content="Order ID" HorizontalAlignment="Left" Margin="216,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.41,0.654" Width="64"/>
+        <Label Content="Customer" HorizontalAlignment="Left" Margin="211,394,0,0" VerticalAlignment="Top" Width="64" FontWeight="SemiBold"/>
+        <Label Content="Start Location" HorizontalAlignment="Left" Margin="191,427,0,0" VerticalAlignment="Top" Width="84" Height="25" FontWeight="SemiBold"/>
+        <Label Content="End Location" HorizontalAlignment="Left" Margin="195,460,0,0" VerticalAlignment="Top" Width="80" FontWeight="SemiBold"/>
+        <Label Content="Order ID" HorizontalAlignment="Left" Margin="216,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.41,0.654" Width="64" FontWeight="SemiBold"/>
         <TextBlock x:Name="invoiceLbl" HorizontalAlignment="Left" Margin="243,522,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="completedBtn" Content="Go" HorizontalAlignment="Left" Margin="323,157,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="completedBtn_Click" FontWeight="SemiBold"/>
-        <Label x:Name="getContractLbl_Copy" Content="Review Completed" HorizontalAlignment="Left" Margin="135,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="188" FontSize="20"/>
-        <Label Content="User:" HorizontalAlignment="Left" Margin="48,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308"/>
-        <Label Content="Contract Marketplace" HorizontalAlignment="Left" Margin="464,21,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="getContractLbl_Copy" Content="Review Completed" HorizontalAlignment="Left" Margin="135,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.272,-0.257" Width="188" FontSize="20" FontWeight="SemiBold"/>
+        <Label Content="User:" HorizontalAlignment="Left" Margin="48,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308" FontWeight="SemiBold"/>
+        <Label Content="Contract Marketplace" HorizontalAlignment="Left" Margin="464,21,0,0" VerticalAlignment="Top" FontWeight="SemiBold"/>
         <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="48,47,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click" FontWeight="SemiBold"/>
         <Image Margin="13,502,518.6,6.4" Source="truckicon_transparent.png" Stretch="Fill"/>
         <Image Margin="526,502,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
