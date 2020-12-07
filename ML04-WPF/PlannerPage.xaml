@@ -20,8 +20,7 @@
         <Label Content="User:" HorizontalAlignment="Left" Margin="53,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308"/>
         <Button x:Name="passTime" Content="Pass Time" HorizontalAlignment="Left" Margin="463,203,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="passTime_Click"/>
         <Button x:Name="Invoice" Content="Invoice" HorizontalAlignment="Left" Margin="463,250,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="Invoice_Click"/>
-        <TextBox x:Name="orderNum" HorizontalAlignment="Left" Height="23" Margin="198,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.5,0.5">
-        </TextBox>
+        <TextBox x:Name="orderNum" HorizontalAlignment="Left" Height="23" Margin="198,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock HorizontalAlignment="Left" Margin="207,293,0,0" TextWrapping="Wrap" Text="Order Number:" VerticalAlignment="Top" Width="95"/>
     </Grid>
 </Window>

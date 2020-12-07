@@ -157,6 +157,7 @@ namespace ML04_WPF
 
             conn.Close();
             completedBtn_Click(sender, e);
+            //updateLbl.Content = "";
         }
 
         private void Box_Checked(object sender, RoutedEventArgs e)
