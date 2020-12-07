@@ -29,5 +29,7 @@
         <Label Content="User:" HorizontalAlignment="Left" Margin="48,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.308"/>
         <Label Content="Contact Marketplace" HorizontalAlignment="Left" Margin="464,21,0,0" VerticalAlignment="Top"/>
         <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="48,47,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click"/>
+        <Image Margin="13,502,518.6,6.4" Source="truckicon_transparent.png" Stretch="Fill"/>
+        <Image Margin="526,502,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
     </Grid>
 </Window>

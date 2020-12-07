@@ -16,5 +16,7 @@
         <PasswordBox x:Name="pass" HorizontalAlignment="Left" Margin="235,358,0,0" VerticalAlignment="Top" Width="118" Height="30"/>
         <Button x:Name="supportBtn" Content="Email Support" HorizontalAlignment="Left" Margin="53,39,0,0" VerticalAlignment="Top" Width="94" Height="30" Click="supportBtn_Click"/>
         <Label Content="TMS Log-In" HorizontalAlignment="Left" Margin="196,84,0,0" VerticalAlignment="Top" Width="192" Height="68" FontSize="36" RenderTransformOrigin="0.497,0.355"/>
+        <Image Margin="10,502,525.6,10.4" Source="truckicon_transparent.png" Stretch="Fill"/>
+        <Image Margin="533,509,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
     </Grid>
 </Window>
