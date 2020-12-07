@@ -12,11 +12,11 @@
         <Button x:Name="backup" Content="Backup" HorizontalAlignment="Left" Margin="456,186,0,0" VerticalAlignment="Top" Width="75" Click="backup_Click" RenderTransformOrigin="0.556,0.588"/>
         <Label Content="Backup Database" HorizontalAlignment="Left" Margin="443,155,0,0" VerticalAlignment="Top" Width="106"/>
         <DataGrid x:Name="contractDataTbl" IsReadOnly="true" HorizontalAlignment="Left" Height="100" Margin="102,129,0,0" VerticalAlignment="Top" Width="322"/>
-        <TextBox x:Name="orderID" HorizontalAlignment="Left" Height="23" Margin="187,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="orderID" HorizontalAlignment="Left" Height="23" Margin="187,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="alterBtn" Content="Alter" HorizontalAlignment="Left" Margin="326,288,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.556,0.588" Height="23"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="152,288,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.643,0.703" Height="23"/>
-        <CheckBox Content="Route Table" HorizontalAlignment="Left" Margin="123,252,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Carrier Data" HorizontalAlignment="Left" Margin="224,252,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Rate/Fees Table" HorizontalAlignment="Left" Margin="322,252,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="route" Content="Route Table" HorizontalAlignment="Left" Margin="123,252,0,0" VerticalAlignment="Top" Checked="route_Checked"/>
+        <CheckBox x:Name="carrier" Content="Carrier Data" HorizontalAlignment="Left" Margin="224,252,0,0" VerticalAlignment="Top" Checked="carrier_Checked"/>
+        <CheckBox x:Name="rate" Content="Rate/Fees Table" HorizontalAlignment="Left" Margin="322,252,0,0" VerticalAlignment="Top" Checked="rate_Checked"/>
     </Grid>
 </Window>

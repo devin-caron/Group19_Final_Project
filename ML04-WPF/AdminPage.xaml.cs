@@ -35,5 +35,30 @@ namespace ML04_WPF
             strCmdText = "/C copy /b Image1.jpg + Archive.rar Image2.jpg";
             System.Diagnostics.Process.Start("CMD.exe", strCmdText);*/
         }
+
+        private void route_Checked(object sender, RoutedEventArgs e)
+        {
+            string myConnectionString = MainWindow.userLogIn.myConnectionString;
+
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = new MySqlConnection(myConnectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM transportationcorridor";
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                    da.Fill(dt);
+            }
+            contractDataTbl.ItemsSource = dt.DefaultView;
+        }
+
+        private void carrier_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rate_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
