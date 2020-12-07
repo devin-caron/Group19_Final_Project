@@ -11,7 +11,7 @@
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="153,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" Text="First Name" Foreground="Gray"/>
         <TextBlock HorizontalAlignment="Left" Margin="23,80,0,0" TextWrapping="Wrap" Text="Your Name" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="375,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextChanged="TextBox_TextChanged" Text="Last Name" Foreground="Gray"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="375,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" Text="Last Name" Foreground="Gray"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="153,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="401" Text="e.g. hello@contact.com" Foreground="Gray"/>
         <TextBlock HorizontalAlignment="Left" Margin="23,120,0,0" TextWrapping="Wrap" Text="Your Email" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="240,24,0,0" TextWrapping="Wrap" Text="Contact Us!" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
@@ -21,7 +21,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="23,206,0,0" TextWrapping="Wrap" Text="Message Subject" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox HorizontalAlignment="Left" Height="105" Margin="153,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="401" Text="Write your message here!" Foreground="Gray"/>
         <TextBlock HorizontalAlignment="Left" Margin="23,253,0,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button Content="Send Email" HorizontalAlignment="Left" Margin="257,377,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" FontWeight="Medium"/>
+        <Button x:Name="sendEmailBtn" Content="Send Email" HorizontalAlignment="Left" Margin="257,377,0,0" VerticalAlignment="Top" Width="75" FontWeight="Medium" Click="sendEmailBtn_Click"/>
 
     </Grid>
 </Window>
