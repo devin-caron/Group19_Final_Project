@@ -117,6 +117,9 @@ namespace ML04_WPF
                 {
                     Console.WriteLine(ex.Message);
                 }
+
+                invoiceLbl.Content = "";
+                sendOrderLbl.Text = "Order sent to planner.";
             }
         }
 
@@ -195,16 +198,18 @@ namespace ML04_WPF
 
                     DateTime time = DateTime.Now;
                     File.AppendAllText(newPath, "---Omnicorp TMS Invoice---\nOrder Time: " + time + "\nOrder ID: " + orderID.Text + "\nCustomer: " + customer + "\nStarting Location: " + startLoc + "\nEnding Location: " + endLoc + "\nKm: " + kms + "\nCost: $" + cost + "\n---Invoice Complete---");
-                    invoiceLbl.Text = "Invoice\nPrinted";
+                    invoiceLbl.Content = "Invoice\nPrinted";
                 }
                 else
                 {
-                    invoiceLbl.Text = "Completed\nOrderID\nRequired";
+                    invoiceLbl.Content = "Completed\nOrderID\nRequired";
+                    sendOrderLbl.Text = "";
                 }
             }
             else
             {
-                invoiceLbl.Text = "Completed\nOrderID\nRequired";
+                invoiceLbl.Content = "Completed\nOrderID\nRequired";
+                sendOrderLbl.Text = "";
             }
         }
 
