@@ -36,6 +36,8 @@ namespace ML04_WPF
         {
             InitializeComponent();
 
+            invoiceLbl.Content = "Completed\nOrderID\nRequired";
+
             string userName = MainWindow.userLogIn.userID;
 
             userLbl.Content = userName;
