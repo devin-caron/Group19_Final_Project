@@ -1,4 +1,14 @@
-﻿using System;
+﻿/* FILE           : BuyerPage.xaml.cs
+ * PROJECT        : ML04 - Final Project
+ * PROGRAMMER     : Group 19:
+ *                  Devin Caron, Kevin Downer, Cole Spehar & Dusan Sasic
+ * FIRST VERSION  : 2020-11-25
+ * DESCRIPTION    : This page is used by the buyer and allows him to do many buyer taks.
+ *                  Tasks include sets up orders, reviews customers and gets contracts from cmp database.
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +25,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Text.RegularExpressions;
 using System.IO;
+using Microsoft.Win32;
 
 namespace ML04_WPF
 {
@@ -34,10 +45,40 @@ namespace ML04_WPF
 
         private void backup_Click(object sender, RoutedEventArgs e)
         {
-            // backup
-            /*string strCmdText;
-            strCmdText = "/C copy /b Image1.jpg + Archive.rar Image2.jpg";
-            System.Diagnostics.Process.Start("CMD.exe", strCmdText);*/
+            SaveFileDialog logFile = new SaveFileDialog();
+            logFile.Filter = "SQL file(*.sql)|*.sql|All Files (*.*)";
+            logFile.Title = "Dump the database (.sql)";
+
+            if (logFile.ShowDialog() == true)
+            {
+                string FilePath = logFile.FileName;
+
+                string conStr = "server=localhost;uid=root;pwd=qazwsx8;database=mssqdatabase";
+                using (MySqlConnection connection = new MySqlConnection(conStr))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        using (MySqlBackup mb = new MySqlBackup(cmd))
+                        {
+                            try
+                            {
+                                cmd.Connection = connection;
+                                connection.Open();
+                                mb.ExportToFile(FilePath);
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                            finally
+                            {
+                                connection.Close();
+                            }
+                        }
+                    }
+                }
+            }
+
         }
 
         private void route_Checked(object sender, RoutedEventArgs e)
