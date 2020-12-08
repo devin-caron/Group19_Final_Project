@@ -3,7 +3,9 @@
  * PROGRAMMER     : Group 19:
  *                  Devin Caron, Kevin Downer, Cole Spehar & Dusan Sasic
  * FIRST VERSION  : 2020-11-25
- * DESCRIPTION    : This program 
+ * DESCRIPTION    : This program models a transportation delivery service using mysql databases
+ *                  to handle logistics for buyer-seller contracts. Accessing contracts through
+ *                  cmp database and completing the orders.
  */
 
 using System;
