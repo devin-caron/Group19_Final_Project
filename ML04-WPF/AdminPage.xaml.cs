@@ -3,8 +3,8 @@
  * PROGRAMMER     : Group 19:
  *                  Devin Caron, Kevin Downer, Cole Spehar & Dusan Sasic
  * FIRST VERSION  : 2020-11-25
- * DESCRIPTION    : This page is used by the buyer and allows him to do many buyer taks.
- *                  Tasks include sets up orders, reviews customers and gets contracts from cmp database.
+ * DESCRIPTION    : This page is used by the admin and allows him to do many admin taks.
+ *                  Tasks include altering tables, backing up the database and displaying carrier information.
  */
 
 
@@ -38,11 +38,22 @@ namespace ML04_WPF
         {
             InitializeComponent();
 
+            // set name
             string userName = MainWindow.userLogIn.userID;
 
             userLbl.Content = userName;
         }
 
+        ///
+        /// \brief <b>backup_click</b> function for <b>AdminPage</b>
+        /// \details <b>backs up the database</b>
+        ///
+        /// Gets the database and creates a backup for possible restoration.
+        ///
+        /// \param None  - <b>object: sender, RoutedEventArgs e</b>
+        ///
+        /// \return  None - <b>void</b>
+        ///
         private void backup_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog logFile = new SaveFileDialog();
@@ -81,6 +92,16 @@ namespace ML04_WPF
 
         }
 
+        ///
+        /// \brief <b>route_checked</b> function for <b>AdminPage</b>
+        /// \details <b>displays route database</b>
+        ///
+        /// When checked the datatable displays the route database.
+        ///
+        /// \param None  - <b>object: sender, RoutedEventArgs e</b>
+        ///
+        /// \return  None - <b>void</b>
+        ///
         private void route_Checked(object sender, RoutedEventArgs e)
         {
             string myConnectionString = MainWindow.userLogIn.myConnectionString;
@@ -99,6 +120,16 @@ namespace ML04_WPF
             carrier.IsChecked = false;
         }
 
+        ///
+        /// \brief <b>carrier_checked</b> function for <b>AdminPage</b>
+        /// \details <b>displays carrier database</b>
+        ///
+        /// When checked the datatable displays the carrier database.
+        ///
+        /// \param None  - <b>object: sender, RoutedEventArgs e</b>
+        ///
+        /// \return  None - <b>void</b>
+        ///
         private void carrier_Checked(object sender, RoutedEventArgs e)
         {
             string myConnectionString = MainWindow.userLogIn.myConnectionString;
@@ -117,6 +148,16 @@ namespace ML04_WPF
             route.IsChecked = false;
         }
 
+        ///
+        /// \brief <b>rate_checked</b> function for <b>AdminPage</b>
+        /// \details <b>displays rate database</b>
+        ///
+        /// When checked the datatable displays the rate database.
+        ///
+        /// \param None  - <b>object: sender, RoutedEventArgs e</b>
+        ///
+        /// \return  None - <b>void</b>
+        ///
         private void rate_Checked(object sender, RoutedEventArgs e)
         {
             string myConnectionString = MainWindow.userLogIn.myConnectionString;
