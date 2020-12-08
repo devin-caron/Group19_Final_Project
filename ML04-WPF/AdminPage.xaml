@@ -21,5 +21,6 @@
         <CheckBox x:Name="rate" Content="Rate/Fees Table" HorizontalAlignment="Left" Margin="313,343,0,0" VerticalAlignment="Top" Checked="rate_Checked" FontWeight="SemiBold" Width="111"/>
         <Image Margin="13,502,518.6,6.4" Source="truckicon_transparent.png" Stretch="Fill"/>
         <Image Margin="526,502,9.6,10.4" Source="blueLogoRealTransparent.png" Stretch="Fill"/>
+        <Label x:Name="backupLbl" Content="" HorizontalAlignment="Left" Margin="474,211,0,0" VerticalAlignment="Top" Width="57" Height="66"/>
     </Grid>
 </Window>

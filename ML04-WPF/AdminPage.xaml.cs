@@ -56,26 +56,29 @@ namespace ML04_WPF
         ///
         private void backup_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog logFile = new SaveFileDialog();
-            logFile.Filter = "SQL file(*.sql)|*.sql|All Files (*.*)";
-            logFile.Title = "Dump the database (.sql)";
+            // set up file
+            SaveFileDialog log = new SaveFileDialog();
+            log.Filter = "SQL file(*.sql)|*.sql|All Files (*.*)|*.*";
+            log.Title = "Dump the database (.sql)";
 
-            if (logFile.ShowDialog() == true)
+            if (log.ShowDialog() == true)
             {
-                string FilePath = logFile.FileName;
+                string FilePath = log.FileName;
 
-                string conStr = "server=localhost;uid=root;pwd=qazwsx8;database=mssqdatabase";
-                using (MySqlConnection connection = new MySqlConnection(conStr))
+                // get connection
+                string conn = "server=localhost;uid=root;pwd=qazwsx8;database=mssqdatabase";
+                using (MySqlConnection connection = new MySqlConnection(conn))
                 {
                     using (MySqlCommand cmd = new MySqlCommand())
                     {
-                        using (MySqlBackup mb = new MySqlBackup(cmd))
+                        using (MySqlBackup sqlBackup = new MySqlBackup(cmd))
                         {
                             try
                             {
+                                // export backup
                                 cmd.Connection = connection;
                                 connection.Open();
-                                mb.ExportToFile(FilePath);
+                                sqlBackup.ExportToFile(FilePath);
                             }
                             catch (Exception ex)
                             {
@@ -83,7 +86,9 @@ namespace ML04_WPF
                             }
                             finally
                             {
+                                // close connection
                                 connection.Close();
+                                backupLbl.Content = "Backup\nCreated";
                             }
                         }
                     }
