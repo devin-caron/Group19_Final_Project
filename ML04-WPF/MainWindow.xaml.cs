@@ -1,4 +1,12 @@
-﻿using System;
+﻿/* FILE           : MainWindow.xaml.cs
+ * PROJECT        : ML04 - Final Project
+ * PROGRAMMER     : Group 19:
+ *                  Devin Caron, Kevin Downer, Cole Spehar & Dusan Sasic
+ * FIRST VERSION  : 2020-12-01
+ * DESCRIPTION    : This program 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
